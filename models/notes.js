@@ -9,7 +9,6 @@ notes.init(
 userID: { 
     type: DataTypes.INTEGER,
     primaryKey: true,
-    autoIncrement: true,
     allowNull: false,
 },
 bookID: {
@@ -19,22 +18,17 @@ bookID: {
 },    
 listID: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
 },
 descriptionSummary: {
     type: DataTypes.STRING,
-    allowNull: false,
 },
 rating: {
 type: DataTypes.INTEGER,
 primaryKey: true,
-allowNull: false,
 },
 notes: {
     type: DataTypes.STRING,
-    allowNull: false,
 }
     }
     );
