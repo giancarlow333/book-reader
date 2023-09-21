@@ -25,7 +25,6 @@ descriptionSummary: {
 },
 rating: {
 type: DataTypes.INTEGER,
-primaryKey: true,
 },
 notes: {
     type: DataTypes.STRING,
