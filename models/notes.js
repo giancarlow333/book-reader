@@ -31,3 +31,5 @@ notes: {
 }
     }
     );
+
+    Model.exports = notes

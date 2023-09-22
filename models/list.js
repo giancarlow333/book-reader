@@ -30,4 +30,5 @@ primaryKey: true,
     }
    
 }
-),
+);
+Model.exports = list

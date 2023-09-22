@@ -5,12 +5,12 @@ const User = require('../../../models/user')
 router.post('/', async (req, res) => {
 	const {
 		username,
-        firstname,
-        lastname,
+        name,
 		email,
 		password,
+        reEnterPassword,
 	} = req.body;
-
+//might need to add additional parameters for reEnterPassword
 	if (!username || !email || !password) {
 		return res.status(400).json({ error: 'You must provider username, first name, last name, password, and email'});
 	}
@@ -23,6 +23,7 @@ router.post('/', async (req, res) => {
             lastname,
 			email,
 			password,
+			reEnterPassword,
 
 		});
 		res.json(newUser);
