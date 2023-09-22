@@ -70,4 +70,4 @@ allowNull: false,
   }
 );
 
-module.exports = User
+module.exports = User;
