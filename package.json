@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "sequelize": "^6.33.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
   }
 }
