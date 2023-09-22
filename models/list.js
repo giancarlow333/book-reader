@@ -19,9 +19,9 @@ List.init(
     
         creatorID:{
             type: DataTypes.INTEGER,
-            allowNull: false,        
+            allowNull: false,
             references: {
-                model: 'list',
+                model: 'user',
                 key: 'id',
             },
         },
