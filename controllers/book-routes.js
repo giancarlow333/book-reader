@@ -4,21 +4,21 @@ const { Book } = require('../models');
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
   try {
-    const dbGalleryData = await Gallery.findAll({
+    const dbBookData = await Book.findAll({
       include: [
         {
-          model: Painting,
-          attributes: ['filename', 'description'],
+          model: Book,
+          attributes: ['title', 'authorLast'],
         },
       ],
     });
 
-    const galleries = dbGalleryData.map((gallery) =>
-      gallery.get({ plain: true })
+    const books = dbBookData.map((book) =>
+      book.get({ plain: true })
     );
 
     res.render('homepage', {
-      galleries,
+      books,
     });
   } catch (err) {
     console.log(err);
@@ -26,13 +26,13 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET one gallery
-router.get('/gallery/:id', async (req, res) => {
+// GET one book
+router.get('/book/:id', async (req, res) => {
   try {
-    const dbGalleryData = await Gallery.findByPk(req.params.id, {
+    const dbBookData = await Book.findByPk(req.params.id, {
       include: [
         {
-          model: Painting,
+          model: Book,
           attributes: [
             'id',
             'title',
@@ -45,26 +45,33 @@ router.get('/gallery/:id', async (req, res) => {
       ],
     });
 
-    const gallery = dbGalleryData.get({ plain: true });
-    res.render('gallery', { gallery });
+    const book = dbBookData.get({ plain: true });
+    res.render('book', { book });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
-// GET one painting
-router.get('/painting/:id', async (req, res) => {
+// POST a book to the database
+router.post('/book', async (req, res) => {
   try {
-    const dbPaintingData = await Painting.findByPk(req.params.id);
+    const newBook = await Book.create({
+      title: req.params.title,
+      authorFirst: req.params.authorFirst,
+      authorLast: req.params.authorLast,
+      ISBN: req.params.ISBN,
+      pubDate: req.params.pubDate,
+      pageCount: req.params.pageCount,
+      availability: req.params.availability
+    });
 
-    const painting = dbPaintingData.get({ plain: true });
-
-    res.render('painting', { painting });
+    
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+
 
 module.exports = router;
