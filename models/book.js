@@ -19,10 +19,11 @@ Book.init(
     authorName: {
         type: DataTypes.STRING,
         allowNull: false,
+        defaultValue: "Anonymous",
     },
     //for ISBN pub date & page count data type will depend on how return from APi whether integer, string, or date. 
     ISBN: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     pubDate: {
