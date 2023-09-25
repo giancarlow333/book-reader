@@ -2,6 +2,8 @@
 const router = require('express').Router();
 const User = require('../../../models/user')
 
+//localhost:3001/api/users/
+
 router.post('/', async (req, res) => {
 	const {
 		username,
@@ -18,9 +20,8 @@ router.post('/', async (req, res) => {
 	// PaSsWoRd
 	try {
 		const newUser = await User.create({
-			username,
-            firstname,
-            lastname,
+			name,
+            username,
 			email,
 			password,
 			reEnterPassword,
@@ -33,4 +34,25 @@ router.post('/', async (req, res) => {
 	}
 
 });
+//get all users
+router.get("/", async (req,res) =>{
+	try{
+		const allUsers =await User.findAll({})
+
+		res.json(allUsers)
+	} catch(err) {
+		res.json(err)
+	}
+})
+
+//delete user based off of id
+
+router.delete("/:id", (req, res)=>{
+	User.destroy({
+		where: {
+			id: req.params.id
+		}
+	}).then(data => (res.status(200).json(data)))
+}
+)
 module.exports = router;
