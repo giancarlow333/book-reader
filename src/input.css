@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+* {
+    box-sizing: border-box;
+}
 //to void defilt inout bozex decorations
 input.middle:focus {
     outline-width: 0;
@@ -48,3 +52,17 @@ button:focus {
 .inputfile:focus + label {
 	outline: 1px dotted #000;
 }
+
+//Quick Add Button
+.hidden {
+    display: none;
+  }
+  
+  .visible {
+    display: block;
+  }
+  
+#dropdown-container {
+    position: absolute;
+    z-index: 1;
+  }
