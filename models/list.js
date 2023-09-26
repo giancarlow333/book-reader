@@ -1,5 +1,5 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const sequelize = require('../config/index.js');
 
 class List extends Model {}
 
@@ -25,6 +25,9 @@ List.init(
                 key: 'id',
             },
         },
+    },
+    {
+        sequelize
     }
 );
 
