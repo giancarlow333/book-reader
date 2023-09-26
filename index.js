@@ -5,6 +5,7 @@ const path = require('path'); // handlebars
 const routes = require('./routes');
 const app = express();
 const PORT = process.env.PORT || 3001;
+const session = require('express-session');
 
 // inititalize and istance of HANDLEBARS 
 const hbs = exphbs.create();
@@ -15,7 +16,7 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended:true }));
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); /// this may need to be fixed, images are not loading
 app.use(routes);
 
 // We are going to build our folders and APS's in such a way where our folder strucatures will math ourendpoints.  This is accomplished by using "routing middleware"

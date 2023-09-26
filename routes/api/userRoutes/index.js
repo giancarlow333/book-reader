@@ -29,10 +29,13 @@ router.post('/', async (req, res) => {
 			reEnterPassword,
 
 		});
-		res.json(newUser);
+		console.log(newUser);
+		// res.json(newUser);
+		res.redirect('../../dashboard');
 	} catch (e) {
 		console.log(e);
-		res.json(e);
+		// res.json(e);
+		res.redirect('../../signup');
 	}
 
 });
