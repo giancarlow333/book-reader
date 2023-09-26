@@ -1,7 +1,7 @@
 const User = require('./user');
 const Book = require('./book');
 const List = require('./list');
-
+const Notes = require('./notes')
 // put model associations and references here
 //User.hasMany(Book)
 
@@ -10,6 +10,6 @@ const List = require('./list');
 
 
 module.exports = {
-	User, Book
+	User, Book, List, Notes
 };
 

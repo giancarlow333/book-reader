@@ -1,5 +1,5 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const sequelize = require('../config/index.js');
 const { primaryKeyAttribute } = require('./book');
 
 class Notes extends Model {}
