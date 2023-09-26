@@ -27,7 +27,11 @@ List.init(
         },
     },
     {
-        sequelize
+      sequelize, 
+      timestamps: false,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'list',
     }
 );
 
