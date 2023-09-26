@@ -5,7 +5,7 @@ class List extends Model {}
 
 List.init(
     {
-        listID:{
+        id:{
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
@@ -27,7 +27,11 @@ List.init(
         },
     },
     {
-        sequelize
+      sequelize, 
+      timestamps: false,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'list',
     }
 );
 
