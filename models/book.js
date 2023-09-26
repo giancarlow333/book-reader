@@ -15,32 +15,31 @@ Book.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
-    //do we want both first & last name or just author name?
-    authorFirst: {
+    // API provides only a single name string
+    authorName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: "Anonymous",
+    },
+    //for ISBN pub date & page count data type will depend on how return from APi whether integer, string, or date. 
+    ISBN: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    authorLast: { 
+    pubDate: {
+        type: DataTypes.DATE,
+    },
+    publisher: {
         type: DataTypes.STRING,
+    },
+    pageCount:{
+        type: DataTypes.INTEGER,
         allowNull: false,
     },
-//for ISBN pub date & page count data type will depend on how return from APi whether integer, string, or date. 
-ISBN: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-},
-pubDate: {
-    type: DataTypes.DATE,
-},
-pageCount:{
-type: DataTypes.INTEGER,
-allowNull: false,
-},
-availability: {
-    type: DataTypes.BOOLEAN,
-    // allowNull: false,
-}    
-
+    availability: {
+        type: DataTypes.BOOLEAN,
+        // allowNull: false,
+    }    
   },
   {
     sequelize, 
