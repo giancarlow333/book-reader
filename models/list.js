@@ -1,11 +1,11 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const sequelize = require('../config/index.js');
 
 class List extends Model {}
 
 List.init(
     {
-        listID:{
+        id:{
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
@@ -25,6 +25,13 @@ List.init(
                 key: 'id',
             },
         },
+    },
+    {
+      sequelize, 
+      timestamps: false,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'list',
     }
 );
 
