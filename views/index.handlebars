@@ -21,7 +21,7 @@
             bg-orange-100 bg-opacity-60 backdrop-blur-md
             shadow-white shadow-inner drop-shadow-2xl rounded-lg" >
             
-            <form class = "w-full h-3/4 flex flex-col justify-evenly items-center text-orange-900 " autocomplete="off" >
+            <form action="/auth/login" method="post" class = "w-full h-3/4 flex flex-col justify-evenly items-center text-orange-900 " autocomplete="off" >
 
             <h3 class = "text-orange-950 text-6xl text-center">Hey Literary Enthusiast!<br>Welcome Back!</h3> 
 
@@ -35,12 +35,13 @@
             
             <input class = "w-7/12 h-14 shadow-white shadow-inner drop-shadow-2xl rounded-full
             bg-stone-900 bg-opacity-60 text-white text-3xl" type = "submit" value = "Submit">
-            
-            <p class = "text-orange-950 text-center text-3xl underline  mt-4"> What?!...Don't Have an Account Yet!!...</p>
-            <button class = "w-36 h-12 shadow-white shadow-inner drop-shadow-2xl rounded-full
-            bg-red-300 bg-opacity-80 text-red-900" type = "submit" value = "Submit">Sign Up!</button>
+
 
             </form>
+            
+            <p class = "text-orange-950 text-center text-3xl underline  mt-4"> What?!...Don't Have an Account Yet!!...</p>
+            <a href="signup"><button class = "w-36 h-12 shadow-white shadow-inner drop-shadow-2xl rounded-full
+            bg-red-300 bg-opacity-80 text-red-900">Sign Up!</button></a>
             <!-- backdrop-sepia  bg-gradient-to-r from-black via-transparent to-black-->
 
             </div>
