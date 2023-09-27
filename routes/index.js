@@ -9,15 +9,34 @@ const apiRoutes = require('./api');
 
 router.use('/api', apiRoutes);
 
-router.get('/', async(req,res) => {
-	res.render('index', {layout: "main", title: "Sign Up", test:"Test"})
+const authRoutes = require('./auth');
+// localhost:3001/api/
+
+router.use('/auth', authRoutes);
+
+router.get('/', async (req, res) => {
+	if (req.session.username){
+		res.redirect('/dashboard')
+	}
+	else
+	res.render('index', { layout: "main", title: "Sign Up", test: "Test" })
 });
-router.get('/signup', async(req,res) => {
-	res.render('signup', {layout: "main", title: "Sign Up", test:"Test"})
+router.get('/signup', async (req, res) => {
+	if (req.session.username){
+		res.redirect('/dashboard')
+	}
+	else
+	res.render('signup', { layout: "main", title: "Sign Up", test: "Test" })
+
 });
 
-router.get('/dashboard', async(req,res) => {
-	res.render('bookDetails', {layout: "main", title: "Dashboard", test:"Test"})
+router.get('/dashboard', async (req, res) => {
+	if (req.session.username) {
+		res.render('dashboard', { layout: "main", title: "Dashboard", username: req.session.username })
+	}
+	else {
+		res.redirect('/signup');
+	}
 });
 
 // router.post('/signup', async(req, res)=>{
