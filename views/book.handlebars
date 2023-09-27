@@ -1,12 +1,3 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./dist/output.css" rel="stylesheet">
-    <title>Document</title>
-</head>
 <body class= "h-screen w-screen flex flex-col justify-center items-center">
 
     <section class = "flex flex-row justify-center items-center w-screen h-screen">
@@ -16,7 +7,7 @@
             <div class = "flex justify-top items-center flex-col h-full w-full font-serif backdrop-brightness-90 shadow-black shadow-2xl">
                 <h1 class = "my-7 text-orange-900 text-5xl text-center antialiased underline decoration-double underline-offset-8 bg-white pb-5 px-3 rounded-2xl bg-opacity-80">Ravishing Reads</h1>
          
-                <!-- Avatar -->
+                 <!-- Avatar -->
                 <div class= "rounded-full mb-8 border-8 border-amber-600 border-solid shadow-black shadow-xl">
                     <img id="display_image" class="h-32 w-32 rounded-full bg-black " src="public/css/img/avators/bookworm1.jpeg">
                   </div>
@@ -38,7 +29,7 @@
                       </div>
                     </div>
                   </div>
-  
+
                 <div class = "w-full flex flex-col justify-top items-center">
                     <p class = "my-6 text-orange-900 text-3xl text-center text-left antialiased w-3/4 bg-white bg-opacity-80 border-t-2 border-orange-900 ">My Shleves</p>
                     <button class = "text-sky-100 text-center text-3xl font-serif antialiased bg-orange-900 rounded-md w-9/12 h-14 mb-2.5 shadow-inner shadow-white opacity-90">Read</button>
@@ -63,43 +54,41 @@
                 <h2 class = "text-3xl mt-6 text-orange-400 sub-pixel-antialiased rounded-2xl bg-black bg-opacity-60 brightness-125 mb-6 font-serif ">“A reader lives a thousand lives before he dies”</h2>
             </div>
 <!--Book Details-->
-<div class = "flex flex-col justify-top items-center  flex-col w-full h-full overflow-auto">
-
-    <div class = "flex flex-row bg-white  bg-opacity-80 w-10/12 h-64 shadow-md shadow-slate-900 rounded-md shrink mb-2">
-        <div class = "flex flex-col justify-center items-center w-2/12 py-2">
-            <img class = "w-8/12  rounded-sm "src = "./public/css/img/avators/alice.jpg">
-            <button id="addToListBtn" class="text-sky-100 text-center bg-orange-950 w-28 h-5 m-1 shadow-inner shadow-white">Add to List</button>
-            <!-- Dropdown using <select> -->
-            <select id="listSelect" class="hidden">
-            <option value="readingList">Reading List</option>
-            <option value="wishlist">Wishlist</option>
-            <option value="favorites">Favorites</option>
-            </select>
-        </div>
-        <div class = "flex flex-col w-10/12 mr-8">
-            <p class = "text-orange-950 text-left text-2xl justify-self-center font-bold 
-            antialiased mt-2 " > Alice in Wonderland <span class = " text-blue-600 text-sm">(2019)</span></p>
-
-            <p class = "text-orange-950 text-left text-lg justify-self-center font-bold 
-            antialiased my-2" >by Carroll</p>
-            <p class = "text-orange-950 text-left text-lg justify-self-center font-serif
-            antialiased"  >ISBN:</p> 
-            <p class = "text-orange-950 text-left text-lg justify-self-center  font-bold 
-            antialiased " >The story tells of a young girl who falls down a rabbit hole into a hallucinogenic world 
-            populated by talking packs of 
-            cards, and animals who look at pocket watches, smoke pipes and have tea parties.</p>
-
-            <p class = "text-orange-950 text-left text-lg justify-self-center font-bold 
-            antialiased"  >Reviews: ?</p>  
-        </div>
-        
-    </div>
-    
-</div>
+            <div class = "flex justify-between items-center  flex-col w-5/6 h-full overflow-auto bg-white opacity-90 brightness-100 ">
+                <!--div 1-->
+                <div class = "flex flex-row justify-top items-top w-full h-3/5">
+                    <div class = "flex flex-col justify-top items-center w-1/4 p-6">
+                        <img class = "rounded-sm "src = "./public/css/img/avators/alice.jpg">
+                        <button class = "text-sky-100 text-center bg-orange-950 w-28 h-10 m-1 shadow-inner shadow-white">Remove Book</button>
+                    </div>
+                    <div class = " w-3/4 flex flex-col justify-top items-top ">
+                        <p class = "text-orange-950 text-left text-5xl justify-self-center font-serif 
+                        antialiased mt-2 " >{{this.title}}<span class = " text-blue-600 text-lg font-mono">{{this.pubDate}}</span></p>
+                
+                        <p class = "text-orange-950 text-left text-2xl justify-self-center font-serif
+                        antialiased my-2" >{{this.authorNAme}}</p>
+                        <p class = "text-orange-950 text-left text-lg justify-self-center font-serif
+                        antialiased"  >{{this.ISBN}}</p> 
+                        <p class = "text-orange-950 text-left text-lg justify-self-center font-serif
+                        antialiased"  >{{this.pageCount}}</p> 
+                        <p class = "text-orange-950 text-left text-lg justify-self-center font-serif
+                        antialiased"  >{{his.review}}</p> 
+                        <!--summary-->
+                        <p class = "text-orange-950 text-left text-lg justify-self-center h-56 font-serif antialiased overflow-y-auto" >{{this.summary}}</p>
+                
+                      
+                    </div>
+                </div>
+                <!--div 2-->
+                <div class = " flex flex-col justify-evenly bg-orange-100 items-center w-10/12 h-2/5 mb-6">
+                    <h4 class ="font-serif text-orange-950 bg-orange-100 w-full text-2xl underline "> My Notes</h4>
+                    <textarea class = "w-full text-black h-full bg-orange-100">My Notes</textarea>
+                    <div class = "flex w-full items-center ">
+                        <button class = "text-sky-100 text-center bg-orange-950 w-28 h-15 shadow-inner shadow-white">Save</button>
+                    </div>
+                </div>
+                
+            </div>
 
     </section>
-
-    <script src = "./public/css/js/avators.js"></script>
 </body>
-</html>
-
