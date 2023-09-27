@@ -29,6 +29,7 @@ router.post('/', async (req, res) => {
 			reEnterPassword,
 
 		});
+		console.log(newUser);
 		res.json(newUser);
 	} catch (e) {
 		console.log(e);
@@ -86,32 +87,4 @@ router.get("/find/username/:username", async (req, res) => {
 	}
 })
 
-router.post('/login', async (req, res) => {
-	const { username, password } = req.body;
-	if (!username || !password) {
-		return res.status(401).json({ error: 'You must provide a valid username and password' });
-	}
-	try {
-		//	find the user with the given email
-		const user = await User.findOne({
-			where: {
-				username,
-			}
-		});
-		//	check if the user actually exists with that given email
-		if (user == null) {
-			//	if no user exists, give them a 400
-			return res.status(400).json({ error: 'No user with that username' });
-		}
-		//	take the users hashed password and compare it with the password that they're passing in from the form
-		const isMatching = await bcrypt.compare(password, user.password)
-		//console.log(isMatching);
-		if (!isMatching) {
-			return res.status(401).json({ error: 'Invalid password' });
-		}
-		return res.status(200).json({ message: 'You are now logged in successfully' });
-	} catch (e) {
-		return res.status(200).json(e);
-	}
-});
 module.exports = router;
