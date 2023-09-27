@@ -16,13 +16,28 @@
             <div class = "flex justify-top items-center flex-col h-full w-full font-serif backdrop-brightness-90 shadow-black shadow-2xl">
                 <h1 class = "my-7 text-orange-900 text-5xl text-center antialiased underline decoration-double underline-offset-8 bg-white pb-5 px-3 rounded-2xl bg-opacity-80">Ravishing Reads</h1>
          
-                <!-- User avator section image display -->    
-                <div class= "rounded-full mb-8 border-8 border-amber-600 border-solid shadow-black shadow-xl">
-                    <img  id="display_image" class = "h-32 w-32 rounded-full bg-black" src ="./public/css/img/avators/bookworm1.jpeg">
-                </div>
-                <!--Upload image Section-->
-                <input type="file" name="file" id="file" class="inputfile" accept = "image/png, image/jpeg, image/avif"/>
-                <label for="file">My Avatar</label>
+                   <!-- Avatar -->
+                   <div class= "rounded-full mb-8 border-8 border-amber-600 border-solid shadow-black shadow-xl">
+                    <img id="display_image" class="h-32 w-32 rounded-full bg-black " src="public/css/img/avators/bookworm1.jpeg">
+                  </div>
+                
+                  <!-- Modal -->
+                  <button id="openModal" class = " bg-blue-800 rounded-md h-8 w-28 text-white shadow-black shadow-md" >My Avatar</button>
+                
+                  <!-- Avatar Modal -->
+                  <div id="avatarModal" class="modal ">
+                    <div class="modal-content">
+                      <span class="close">&times;</span>
+                      <div id="avatar-gallery">
+                        <img class="avatar-option" src="./public/css/img/avators/cat.jpeg" alt="Avatar 1">
+                        <img class="avatar-option" src="./public/css/img/avators/fox.jpeg" alt="Avatar 2">
+                        <img class="avatar-option" src="./public/css/img/avators/pig.png" alt="Avatar 3">
+                        <img class="avatar-option" src="./public/css/img/avators/panda.jpeg" alt="Avatar 4">
+                        <img class="avatar-option" src="./public/css/img/avators/book2.jpeg" alt="Avatar 5">
+                        <img class="avatar-option" src="./public/css/img/avators/owl.png" alt="Avatar 6">
+                      </div>
+                    </div>
+                  </div>
 
                 <div class = "w-full flex flex-col justify-top items-center">
                     <p class = "my-6 text-orange-900 text-3xl text-center text-left antialiased w-3/4 bg-white bg-opacity-80 border-t-2 border-orange-900 ">My Shleves</p>
@@ -89,7 +104,7 @@
 
     </section>
 
-    <script src = "./models/avators.js"></script>
+    <script src = "./public/css/js/avators.js"></script>
 </body>
 </html>
 
