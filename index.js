@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // inititalize and istance of HANDLEBARS 
-const hbs = exphbs.create();
+const hbs = exphbs.create({});
 // handlebars middleware set up
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
