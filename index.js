@@ -7,7 +7,7 @@ const hbs = exphbs.create({});
 
 //-------------
 const sequelize = require('./config');
-const routes = require('./routes');
+// const routes = require('./routes');
 // Importing the Sequelize session storage functionality
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -20,9 +20,9 @@ const sess = {
     cookie: {},
     resave: false,
     saveUninitialized: true,
-    store: new SequelizeStore({
-        db: sequelize,
-    }),
+    // store: new SequelizeStore({
+    //     db: sequelize,
+    // }),
 };
 
 // Actually use the session data fron the object above
@@ -41,13 +41,14 @@ app.use(session({
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(require('./controllers/index.js'))
 //-----------------------------------
 
 app.use(express.json());
 app.use(express.urlencoded({ extended:true }));
-app.use(routes);
+
+app.use(require('./controllers/index.js'))
+
+//app.use(routes);
 
 
 
