@@ -39,7 +39,13 @@ Book.init(
     availability: {
         type: DataTypes.BOOLEAN,
         // allowNull: false,
-    }    
+    },
+    bookLink: {
+        type: DataTypes.STRING,
+    },
+    imgLink: {
+        type: DataTypes.STRING,
+    }
   },
   {
     sequelize, 
