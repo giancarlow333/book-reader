@@ -6,11 +6,10 @@ const exphbs =require('express-handlebars');
 const hbs = exphbs.create({});
 
 //-------------
-const session = require('express-session');
-
 const sequelize = require('./config');
 const routes = require('./routes');
 // Importing the Sequelize session storage functionality
+const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -28,8 +27,7 @@ const sess = {
 
 // Actually use the session data fron the object above
 app.use(session(sess));  
-
-
+/*
 
 const session = require('express-session');
 app.use(session({
@@ -37,10 +35,9 @@ app.use(session({
     resave: true,
     saveUninitialized: true,
     // cookie: { secure:true }
-}))
+}));*/
 
 //------inititalize and istance of HANDLEBARS ------
-
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));

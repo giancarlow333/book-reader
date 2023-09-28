@@ -37,3 +37,6 @@ router.get('/list/:listid',  async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+
+module.exports = router;
