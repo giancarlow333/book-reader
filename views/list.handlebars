@@ -55,7 +55,7 @@
             </div>
 <!--Book Details-->
 <div class = "flex flex-col justify-top items-center  flex-col w-full h-full overflow-auto">
-{{#each book}}
+{{#each list.books as |book|}}
     <div class = "flex flex-row bg-white  bg-opacity-80 w-10/12 h-64 shadow-md shadow-slate-900 rounded-md shrink mb-2">
         <div class = "flex flex-col justify-center items-center w-2/12 py-2">
             <img class = "w-8/12  rounded-sm "src = {{this.bookImg}}>

@@ -8,12 +8,13 @@ const ListContents = require('./listContents');
 // A list can have many (contain) books
 ListContents.hasMany(Book, {
 	foreignKey: 'id',
-	targetKey: 'book_i_d'
+	targetKey: 'bookID'
 });
 
 // A book can belong to many lists
 Book.belongsTo(ListContents, {
-	foreignKey: 'id'
+	foreignKey: 'id',
+	targetKey: 'bookID'
 });
 
 ListContents.belongsTo(List, {
