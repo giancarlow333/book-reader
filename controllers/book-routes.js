@@ -1,8 +1,10 @@
 const router = require('express').Router();
 const { Book, List, ListContents } = require('../models');
+const withAuth = require('../utils/auth');
 
 // GET one book
-router.get('/book/:id', async (req, res) => {
+// withAuth makes sure you're logged in before showing you any pages
+router.get('/book/:id', withAuth, async (req, res) => {
   try {
     const dbBookData = await Book.findByPk(req.params.id, {
       include: [

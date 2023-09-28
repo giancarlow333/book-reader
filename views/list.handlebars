@@ -1,12 +1,3 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./dist/output.css" rel="stylesheet">
-    <title>Document</title>
-</head>
 <body class= "h-screen w-screen flex flex-col justify-center items-center">
 
     <section class = "flex flex-row justify-center items-center w-screen h-screen">
@@ -16,7 +7,7 @@
             <div class = "flex justify-top items-center flex-col h-full w-full font-serif backdrop-brightness-90 shadow-black shadow-2xl">
                 <h1 class = "my-7 text-orange-900 text-5xl text-center antialiased underline decoration-double underline-offset-8 bg-white pb-5 px-3 rounded-2xl bg-opacity-80">Ravishing Reads</h1>
          
-                <!-- Avatar -->
+                 <!-- Avatar -->
                 <div class= "rounded-full mb-8 border-8 border-amber-600 border-solid shadow-black shadow-xl">
                     <img id="display_image" class="h-32 w-32 rounded-full bg-black " src="public/css/img/avators/bookworm1.jpeg">
                   </div>
@@ -38,7 +29,7 @@
                       </div>
                     </div>
                   </div>
-  
+
                 <div class = "w-full flex flex-col justify-top items-center">
                     <p class = "my-6 text-orange-900 text-3xl text-center text-left antialiased w-3/4 bg-white bg-opacity-80 border-t-2 border-orange-900 ">My Shleves</p>
                     <button class = "text-sky-100 text-center text-3xl font-serif antialiased bg-orange-900 rounded-md w-9/12 h-14 mb-2.5 shadow-inner shadow-white opacity-90">Read</button>
@@ -64,7 +55,7 @@
             </div>
 <!--Book Details-->
 <div class = "flex flex-col justify-top items-center  flex-col w-full h-full overflow-auto">
-
+{{#each book}}
     <div class = "flex flex-row bg-white  bg-opacity-80 w-10/12 h-64 shadow-md shadow-slate-900 rounded-md shrink mb-2">
         <div class = "flex flex-col justify-center items-center w-2/12 py-2">
             <img class = "w-8/12  rounded-sm "src = "./public/css/img/avators/alice.jpg">
@@ -78,27 +69,24 @@
         </div>
         <div class = "flex flex-col w-10/12 mr-8">
             <p class = "text-orange-950 text-left text-2xl justify-self-center font-bold 
-            antialiased mt-2 " > Alice in Wonderland <span class = " text-blue-600 text-sm">(2019)</span></p>
+            antialiased mt-2 " >{{this.title}}<span class = " text-blue-600 text-sm">{{this.pubDate}}</span></p>
 
             <p class = "text-orange-950 text-left text-lg justify-self-center font-bold 
-            antialiased my-2" >by Carroll</p>
+            antialiased my-2" >{{this.authorName}}</p>
             <p class = "text-orange-950 text-left text-lg justify-self-center font-serif
-            antialiased"  >ISBN:</p> 
+            antialiased"  >{{this.ISBN}}</p> 
             <p class = "text-orange-950 text-left text-lg justify-self-center  font-bold 
-            antialiased " >The story tells of a young girl who falls down a rabbit hole into a hallucinogenic world 
-            populated by talking packs of 
-            cards, and animals who look at pocket watches, smoke pipes and have tea parties.</p>
-
+            antialiased " >{{this.pageCount}}</p>
             <p class = "text-orange-950 text-left text-lg justify-self-center font-bold 
-            antialiased"  >Reviews: ?</p>  
+            antialiased"  >{{this.description}}</p>  
         </div>
         
     </div>
-    
+{{/each}} 
 </div>
 
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
         function addDarkmodeWidget() {
             const options = {
@@ -114,5 +102,3 @@
 
     <script src = "./public/css/js/avators.js"></script>
 </body>
-</html>
-
