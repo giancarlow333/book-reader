@@ -13,6 +13,7 @@ module.exports = {
     './views/partials/results.handlebars',
     './views/partials/signup.handlebars',
     './views/index.handlebars',
+    './public/css/js/darkmode.js',
   ],
   theme: {
     extend: {},
