@@ -98,3 +98,7 @@ button:focus {
   .close {
     cursor: pointer;
   }
+
+  .darkmode--activated .custom-bg {
+    background-image: url(./public/css/img/Backgrounds/darkbackground.jpeg);
+  }

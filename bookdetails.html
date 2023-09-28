@@ -38,7 +38,7 @@
                       </div>
                     </div>
                   </div>
-
+                   
                 <div class = "w-full flex flex-col justify-top items-center">
                     <p class = "my-6 text-orange-900 text-3xl text-center text-left antialiased w-3/4 bg-white bg-opacity-80 border-t-2 border-orange-900 ">My Shleves</p>
                     <button class = "text-sky-100 text-center text-3xl font-serif antialiased bg-orange-900 rounded-md w-9/12 h-14 mb-2.5 shadow-inner shadow-white opacity-90">Read</button>
@@ -51,7 +51,7 @@
         </div>
 
 
-        <div class = "flex flex-col justify-top items-center h-full w-3/4 bg-repeat" style= "background-image: url(./public/css/img/Backgrounds/bakcground6.png)">
+        <div class="flex flex-col justify-top items-center h-full w-3/4 bg-repeat custom-bg" style="background-image: url(./public/css/img/Backgrounds/bakcground6.png)">
  <!--SearchBar-->       
             <div class = "flex justify-center items-center flex-col w-5/6 h-1/4 " >
 
@@ -102,7 +102,20 @@
                 
             </div>
 
-    </section>
+    </section> 
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+            const options = {
+                label: '🌓', 
+         }
+ 
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+        
+         }
+         window.addEventListener('load', addDarkmodeWidget);
+    </script> 
 
     <script src = "./public/css/js/avators.js"></script>
 </body>
