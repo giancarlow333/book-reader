@@ -1,5 +1,6 @@
 var books = require("google-books-search");
 
+
 var options = {
   // key: "YOUR API KEY",
   // field: 'title',
@@ -10,8 +11,9 @@ var options = {
   //  lang: 'en'
 };
 
+
 function bookQuery () {
-books.search("jen badass", options, function (error, results) {
+books.search(searchTerm, options, function (error, results) {
   if (!error) {
     // console.log(results[0]);
     // console.log(results[1].title)
@@ -50,7 +52,9 @@ books.search("jen badass", options, function (error, results) {
  // results;
 });}
 
-//module.exports = bookreturn
+bookQuery()
+
+module.exports = bookQuery;
 
 //books.lookup('9KJJYFIss_wC', function(error, results) {
 // if ( ! error ) {
