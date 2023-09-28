@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Book, List, ListContents } = require('../models');
 const withAuth = require('../utils/auth');
 
-// GW: Not sure where to put this
+/* GW: Not sure where to put this
 router.get('/', withAuth, async (req, res) => {
     try {
         const lists = await List.findByPk(req.params.creatorID, {
@@ -19,6 +19,7 @@ router.get('/', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
+*/
 
 // GET all books in a particular list
 router.get('/list/:listid',  async (req, res) => {
@@ -37,3 +38,6 @@ router.get('/list/:listid',  async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+
+module.exports = router;
