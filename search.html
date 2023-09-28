@@ -4,21 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./dist/output.css" rel="stylesheet">
+    <link href="./css/output.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body class= "h-screen w-screen flex flex-col justify-center items-center">
 
     <section class = "flex flex-row justify-center items-center w-screen h-screen">
 
-        <div class = "flex flex-row justify-center items-center w-1/4 h-full bg-repeat "  style= "background-image: url(./public/css/img/Backgrounds/bookpages.jpeg)">
+        <div class = "flex flex-row justify-center items-center w-1/4 h-full bg-repeat "  style= "background-image: url(./public/img/Backgrounds/bookpages.jpeg)">
 
             <div class = "flex justify-top items-center flex-col h-full w-full font-serif backdrop-brightness-90 shadow-black shadow-2xl">
                 <h1 class = "my-7 text-orange-900 text-5xl text-center antialiased underline decoration-double underline-offset-8 bg-white pb-5 px-3 rounded-2xl bg-opacity-80">Ravishing Reads</h1>
          
                 <!-- Avatar -->
                 <div class= "rounded-full mb-8 border-8 border-amber-600 border-solid shadow-black shadow-xl">
-                    <img id="display_image" class="h-32 w-32 rounded-full bg-black " src="public/css/img/avators/bookworm1.jpeg">
+                    <img id="display_image" class="h-32 w-32 rounded-full bg-black " src="./public/img/avators/bookworm1.jpeg">
                   </div>
                 
                   <!-- Modal -->
@@ -29,12 +29,12 @@
                     <div class="modal-content">
                       <span class="close">&times;</span>
                       <div id="avatar-gallery">
-                        <img class="avatar-option" src="./public/css/img/avators/cat.jpeg" alt="Avatar 1">
-                        <img class="avatar-option" src="./public/css/img/avators/fox.jpeg" alt="Avatar 2">
-                        <img class="avatar-option" src="./public/css/img/avators/pig.png" alt="Avatar 3">
-                        <img class="avatar-option" src="./public/css/img/avators/panda.jpeg" alt="Avatar 4">
-                        <img class="avatar-option" src="./public/css/img/avators/book2.jpeg" alt="Avatar 5">
-                        <img class="avatar-option" src="./public/css/img/avators/owl.png" alt="Avatar 6">
+                        <img class="avatar-option" src="./public/img/avators/cat.jpeg" alt="Avatar 1">
+                        <img class="avatar-option" src="./public/img/avators/fox.jpeg" alt="Avatar 2">
+                        <img class="avatar-option" src="./public/img/avators/book2.jpeg" alt="Avatar 3">
+                        <img class="avatar-option" src="./public/img/avators/owl.png" alt="Avatar 4">
+                        <img class="avatar-option" src="./public/img/avators/panda.jpeg" alt="Avatar 5">
+                        <img class="avatar-option" src="./public/img/avators/pig.png" alt="Avatar 6">
                       </div>
                     </div>
                   </div>
@@ -51,14 +51,14 @@
         </div>
 
 
-        <div class = "flex flex-col justify-top items-center h-full w-3/4 bg-repeat" style= "background-image: url(./public/css/img/Backgrounds/bakcground6.png)">
+        <div class = "flex flex-col justify-top items-center h-full w-3/4 bg-repeat" style= "background-image: url(./public/img/Backgrounds/bakcground6.png)">
  <!--SearchBar-->       
             <div class = "flex justify-center items-center flex-col w-5/6 h-1/4 " >
 
                 <form class = "w-10/12  h-14 flex flex-row justify-top items-center text-orange-900 border-b-4 border-orange-900 rounded-full bg-white  bg-opacity-80 font-serif " autocomplete="off" >
                 <input class = "w-full  h-full  pl-6 bg-transparent
                  placeholder:text-orange-900 placeholder:italic text-3xl rounded-full" type = "text" name = "search" placeholder = "Find Me A Book..."/>
-                 <button type = "submit" class = " self-end flex-none h-full rounded-full mr-3" ><img class = "w-10 rounded-full "src = "./public/css/img/Backgrounds/search-Icon3.png"></button>
+                 <button type = "submit" class = " self-end flex-none h-full rounded-full mr-3" ><img class = "w-10 rounded-full "src = "./public/img/Backgrounds/search-Icon3.png"></button>
                 </form>
                 <h2 class = "text-3xl mt-6 text-orange-400 sub-pixel-antialiased rounded-2xl bg-black bg-opacity-60 brightness-125 mb-6 font-serif ">“A reader lives a thousand lives before he dies”</h2>
             </div>
@@ -67,7 +67,7 @@
 
     <div class = "flex flex-row bg-white  bg-opacity-80 w-10/12 h-64 shadow-md shadow-slate-900 rounded-md shrink mb-2">
         <div class = "flex flex-col justify-center items-center w-2/12 py-2">
-            <img class = "w-8/12  rounded-sm "src = "./public/css/img/avators/alice.jpg">
+            <img class = "w-8/12  rounded-sm "src = "./public/img/avators/alice.jpg">
             <button id="addToListBtn" class="text-sky-100 text-center bg-orange-950 w-28 h-5 m-1 shadow-inner shadow-white">Add to List</button>
             <!-- Dropdown using <select> -->
             <select id="listSelect" class="hidden">
@@ -112,7 +112,7 @@
          window.addEventListener('load', addDarkmodeWidget);
     </script> 
 
-    <script src = "./public/css/js/avators.js"></script>
+<script src = "./public/js/avators.js"></script>
 </body>
 </html>
 
