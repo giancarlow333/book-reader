@@ -1,4 +1,16 @@
 var books = require('google-books-search');
+//var searchpage = require('.../views/results.handlebars')
+
+//const router = require('express').Router();
+//const User = require('../../../models/user');
+//const bcrypt = require('bcryptjs');
+//const { Op } = require('sequelize');
+
+app.use(express.static('views'));
+
+const searhkey = document.querySelector('input[name="search"]');
+
+console.log(searchkey)
 
 var options = {
    // key: "YOUR API KEY",
@@ -11,7 +23,7 @@ var options = {
 };
 
 
-books.search('Jen Badass', options, function(error, results) {
+books.search(searchkey, options, function(error, results) {
     if ( ! error ) {
        console.log(results[0]);
        // console.log(results[1].title)
@@ -20,7 +32,7 @@ books.search('Jen Badass', options, function(error, results) {
         else {title = results[0].title}
         let ISBNobject = results[0].industryIdentifiers.find(function(){return type='ISBN_13'})
         let ISBN = ISBNobject.identifier
-       let bookreturn = [
+        let bookreturn = [
         title,
        // console.log(Btitle)
         author = results[0].authors,
@@ -31,7 +43,7 @@ books.search('Jen Badass', options, function(error, results) {
         link = results[0].link,
         thumbnail = results[0].thumbnail, ]
         console.log(bookreturn)
-        return response.json();
+        return bookreturn;
     } else {
         console.log(error);
     }
@@ -40,7 +52,7 @@ books.search('Jen Badass', options, function(error, results) {
 
 
 
-
+module.exports = bookreturn
 
 //books.lookup('9KJJYFIss_wC', function(error, results) {
    // if ( ! error ) {
