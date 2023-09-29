@@ -1,6 +1,5 @@
 var books = require("google-books-search");
 
-
 const options = {
   // key: "YOUR API KEY",
   // field: 'title',
@@ -11,50 +10,39 @@ const options = {
   //  lang: 'en'
 };
 
+function bookQuery(searchTerm) {
+  return new Promise((resolve, reject) => {
+    books.search(searchTerm, function (error, results) {
+      if (!error) {
+        // console.log(results[0]);
+        // console.log(results[1].title)
+        const cleanResults = results.map((result) => {
+          if (result.subtitle) {
+            result.title = result.title + ": " + result.subtitle;
+          }
+          result.industryIdentifiers = result.industryIdentifiers.find(
+            function () {
+              return (type = "ISBN_13");
+            }
+          );
+          result.industryIdentifiers = result.industryIdentifiers.identifier;
+          result.publishedDate = result.publishedDate.slice(0, 4);
+          return result;
+        });
 
-function bookQuery (searchTerm) {
-books.search(searchTerm, function (error, results) {
-  if (!error) {
-    // console.log(results[0]);
-    // console.log(results[1].title)
-    const cleanResults = results.map((result) => {
-      if (result.subtitle) {
-        result.title = result.title + ": " + result.subtitle;
+        resolve(cleanResults);
       }
-      result.industryIdentifiers = result.industryIdentifiers.find(function () {
-        return (type = "ISBN_13");
-      });
-      result.industryIdentifiers = result.industryIdentifiers.identifier;
-      result.publishedDate = result.publishedDate.slice(0, 4);
-      return result;
+      else {
+      reject(error);}
+
+      // results;
     });
+  });
+}
 
-    console.log(cleanResults);
+//bookQuery();
 
-    //let ISBNobject = results[0].industryIdentifiers.find(function(){return type='ISBN_13'})
-    // let ISBN = ISBNobject.identifier
-
-    // let bookreturn = [
-    //  title,
-    // console.log(Btitle)
-    //  author = results[0].authors,
-    // pubdate = results[0].publishedDate.slice(0,4),
-    //  publisher = results[0].publisher,
-    //  ISBN,
-    //  pages = results[0].pageCount,
-    //  link = results[0].link,
-    //  thumbnail = results[0].thumbnail, ]
-    // console.log(bookreturn)
-    // return bookreturn;
-  } else {
-    console.log(error);
-  }
- // results;
-});}
-
-bookQuery()
-
-module.exports = {bookQuery};
+module.exports = { bookQuery };
 
 //books.lookup('9KJJYFIss_wC', function(error, results) {
 // if ( ! error ) {
@@ -75,7 +63,21 @@ module.exports = {bookQuery};
 //  lang: 'en'
 //};
 
+//let ISBNobject = results[0].industryIdentifiers.find(function(){return type='ISBN_13'})
+// let ISBN = ISBNobject.identifier
 
+// let bookreturn = [
+//  title,
+// console.log(Btitle)
+//  author = results[0].authors,
+// pubdate = results[0].publishedDate.slice(0,4),
+//  publisher = results[0].publisher,
+//  ISBN,
+//  pages = results[0].pageCount,
+//  link = results[0].link,
+//  thumbnail = results[0].thumbnail, ]
+// console.log(bookreturn)
+// return bookreturn;
 
 //var searchpage = require('.../views/results.handlebars')
 
