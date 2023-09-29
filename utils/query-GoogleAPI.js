@@ -27,6 +27,7 @@ function bookQuery(searchTerm) {
           );
           result.industryIdentifiers = result.industryIdentifiers.identifier;
           result.publishedDate = result.publishedDate.slice(0, 4);
+          result.description = result.description.slice(0, 265) + "...";
           return result;
         });
 
