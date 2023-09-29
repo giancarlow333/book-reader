@@ -1,6 +1,6 @@
 // Create user   /api/users
 const router = require('express').Router();
-const User = require('../../../models/user');
+const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const { Op } = require('sequelize');
 
@@ -37,6 +37,7 @@ router.post('/', async (req, res) => {
 	}
 
 });
+
 //get all users
 router.get("/", async (req, res) => {
 	try {

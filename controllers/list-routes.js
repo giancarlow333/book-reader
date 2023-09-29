@@ -25,14 +25,12 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/list/:listid',  async (req, res) => {
     try {
         const listBooks = await ListContents.findByPk(req.params.listid, {
-            include: [{
-                model: ListContents,
-                attributes: [ 'bookID' ]
-            }]
-        });
-
+            include: Book
+        }); 
+        //console.log(listBooks);include: [{ all: true, nested: true }]
         const list = listBooks.get({ plain: true });
-        res.render('bookDetails', { list });
+        console.log(list);
+        res.render('list', { list });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
