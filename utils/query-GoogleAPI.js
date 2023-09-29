@@ -1,19 +1,19 @@
 var books = require("google-books-search");
 
 
-var options = {
+const options = {
   // key: "YOUR API KEY",
   // field: 'title',
   //  offset: 0,
-  limit: 3,
+  limit: 15,
   type: "books",
   //  order: 'relevance',
   //  lang: 'en'
 };
 
 
-function bookQuery () {
-books.search(searchTerm, options, function (error, results) {
+function bookQuery (searchTerm) {
+books.search(searchTerm, function (error, results) {
   if (!error) {
     // console.log(results[0]);
     // console.log(results[1].title)
@@ -54,7 +54,7 @@ books.search(searchTerm, options, function (error, results) {
 
 bookQuery()
 
-module.exports = bookQuery;
+module.exports = {bookQuery};
 
 //books.lookup('9KJJYFIss_wC', function(error, results) {
 // if ( ! error ) {

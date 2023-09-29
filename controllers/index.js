@@ -5,11 +5,13 @@ const listRoutes = require('./list-routes.js');
 // const apiRoutes = require('./api-routes.js');
 const userRoutes = require('./user-routes.js')
 const authRoutes = require('./auth-routes.js');
+const bookqueryRoutes = require("./bookquery.route.js")
 
 router.use('/', bookRoutes);
 router.use('/', listRoutes);
 router.use('/user', userRoutes);
 router.use('/auth', authRoutes);
+router.use('/bookquery', bookqueryRoutes);
 
 router.get('/', async (req, res) => {
 	if (req.session.username){
