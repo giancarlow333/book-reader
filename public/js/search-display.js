@@ -1,10 +1,24 @@
-var searchTerm = document.querySelector('#search')
+var searchTerm = document.querySelectorAll('#search')
+var addButtons = document.querySelectorAll('#addToListBtn')
+var searchData = []
+var titleAll = document.querySelectorAll("#title")
+var ISBNall = document.querySelectorAll("#ISBN")
+var authorAll = document.querySelectorAll("#author")
+var pubDateAll = document.querySelectorAll("#pubDate")
+var pageCountAll = document.querySelectorAll("#pageCount")
+var descriptionAll = document.querySelectorAll("#description")
+var thumbnailAll = document.querySelectorAll("#thumbnail")
 
+
+addEventListener
 
 fetch("local")
 .then(function (response) {
     return response.json();
 })
+
+
+
 
 
 resultName.innerHTML = storedSearches[index].location
@@ -44,3 +58,7 @@ resultName.innerHTML = storedSearches[index].location
                 wind.innerHTML = "Wind Speed: " + data.list[o].wind.speed + "mph"
                 o = (o + 8)
             })
+
+
+
+            addButtons.forEach(button => button.addEventListener("click", saveDOMall))
