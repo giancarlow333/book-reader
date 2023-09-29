@@ -3,6 +3,7 @@ const router = require('express').Router();
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const { Op } = require('sequelize');
+const { List } = require('../models');
 
 //localhost:3001/auth/
 
@@ -38,6 +39,15 @@ router.post('/signup', async (req, res, next) => {
 			password,
 		});
 		console.log(newUser);
+
+		const toReadList = await List.create({
+			creatorID: newUser.id,
+			listName: "To Read"
+		});
+		const alreadyReadList = await List.create({
+			creatorID: newUser.id,
+			listName: "Already Read"
+		});
 
 		//set session data
 		CreateSessionData(req, newUser);
@@ -82,7 +92,7 @@ router.post('/login', async (req, res) => {
 		if (user == null) {
 			//	if no user exists, give them a 400
 			//return res.status(400).json({ error: 'No user with that username' });
-			console.log("MUser does not exist");
+			console.log("User does not exist");
 			res.redirect('../');
 			return;
 		}
