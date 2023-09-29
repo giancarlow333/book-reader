@@ -593,10 +593,6 @@ video {
   margin-top: 1.5rem;
 }
 
-.block {
-  display: block;
-}
-
 .flex {
   display: flex;
 }
@@ -609,10 +605,6 @@ video {
   height: 25%;
 }
 
-.h-10 {
-  height: 2.5rem;
-}
-
 .h-12 {
   height: 3rem;
 }
@@ -621,20 +613,12 @@ video {
   height: 3.5rem;
 }
 
-.h-2\/5 {
-  height: 40%;
-}
-
 .h-20 {
   height: 5rem;
 }
 
 .h-3\/4 {
   height: 75%;
-}
-
-.h-3\/5 {
-  height: 60%;
 }
 
 .h-32 {
@@ -647,10 +631,6 @@ video {
 
 .h-5\/6 {
   height: 83.333333%;
-}
-
-.h-56 {
-  height: 14rem;
 }
 
 .h-64 {
@@ -729,10 +709,6 @@ video {
   width: 100vw;
 }
 
-.w-3 {
-  width: 0.75rem;
-}
-
 .flex-none {
   flex: none;
 }
@@ -757,10 +733,6 @@ video {
   justify-content: center;
 }
 
-.justify-between {
-  justify-content: space-between;
-}
-
 .justify-around {
   justify-content: space-around;
 }
@@ -779,10 +751,6 @@ video {
 
 .overflow-auto {
   overflow: auto;
-}
-
-.overflow-y-auto {
-  overflow-y: auto;
 }
 
 .rounded-2xl {
@@ -889,21 +857,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-red-950 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(69 10 10 / var(--tw-bg-opacity));
-}
-
-.bg-red-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
-}
-
-.bg-red-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(127 29 29 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-40 {
   --tw-bg-opacity: 0.4;
 }
@@ -981,10 +934,6 @@ video {
   text-align: center;
 }
 
-.font-mono {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-
 .font-serif {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
@@ -1024,11 +973,6 @@ video {
   line-height: 1.25rem;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -1045,11 +989,6 @@ video {
 .text-amber-600 {
   --tw-text-opacity: 1;
   color: rgb(217 119 6 / var(--tw-text-opacity));
-}
-
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .text-blue-600 {
@@ -1149,11 +1088,6 @@ video {
 .shadow-white {
   --tw-shadow-color: #fff;
   --tw-shadow: var(--tw-shadow-colored);
-}
-
-.brightness-100 {
-  --tw-brightness: brightness(1);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .brightness-125 {
