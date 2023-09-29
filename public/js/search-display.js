@@ -1,3 +1,12 @@
+var searchTerm = document.querySelector('#search')
+
+
+fetch("local")
+.then(function (response) {
+    return response.json();
+})
+
+
 resultName.innerHTML = storedSearches[index].location
             //setting current weather
             currentSrc = data.list[0].weather[0].icon
