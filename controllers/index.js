@@ -11,7 +11,7 @@ router.use('/', bookRoutes);
 router.use('/', listRoutes);
 router.use('/user', userRoutes);
 router.use('/auth', authRoutes);
-router.use('/bookquery', bookqueryRoutes);
+router.use('/search', bookqueryRoutes);
 
 router.get('/', async (req, res) => {
 	if (req.session.username){
