@@ -16,23 +16,23 @@ router.use('/auth', authRoutes);
 
 router.get('/', async (req, res) => {
 	if (req.session.username){
-		res.redirect('/dashboard')
+		res.redirect('/result')
 	}
 	else
 	res.render('index', { layout: "main", title: "Sign Up", test: "Test" })
 });
 router.get('/signup', async (req, res) => {
 	if (req.session.username){
-		res.redirect('/dashboard')
+		res.redirect('/results')
 	}
 	else
 	res.render('signup', { layout: "main", title: "Sign Up", test: "Test" })
 
 });
 
-router.get('/dashboard', async (req, res) => {
+router.get('/results', async (req, res) => {
 	if (req.session.username) {
-		res.render('dashboard', { layout: "main", title: "Dashboard", username: req.session.username })
+		res.render('results', { layout: "main", title: "results", username: req.session.username })
 	}
 	else {
 		res.redirect('/signup');
@@ -49,3 +49,7 @@ router.get('/dashboard', async (req, res) => {
 
 
 module.exports = router;
+
+
+
+/// updated to results page 
