@@ -13,7 +13,7 @@ const options = {
 
 
 function bookQuery (searchTerm) {
-books.search(searchTerm, options, function (error, results) {
+books.search(searchTerm, function (error, results) {
   if (!error) {
     // console.log(results[0]);
     // console.log(results[1].title)

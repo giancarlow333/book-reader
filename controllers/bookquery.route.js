@@ -1,9 +1,10 @@
-const query = require('./utils/query-GoogleAPI.js')
+const query = require('../utils/query-GoogleAPI.js')
+const router = require("express").Router()
 
 
-
-router.get('/search/:searchTerm', withAuth, async (req, res) => {
- try { searchTerm = req
+router.get('/search/:searchTerm', async (req, res) => {
+ try { const searchTerm = req.params.searchTerm
+  console.log(searchTerm)
     const results = query(searchTerm) 
     res.render('results', { results });
   } catch (err) {
@@ -12,3 +13,4 @@ router.get('/search/:searchTerm', withAuth, async (req, res) => {
   
 }});
 
+module.exports = router
