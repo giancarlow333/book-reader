@@ -66,7 +66,7 @@
 {{#each results}}
     <div class = "flex flex-row bg-white  bg-opacity-80 w-10/12 h-64 shadow-md shadow-slate-900 rounded-md shrink mb-2">
         <div class = "flex flex-col justify-center items-center w-2/12 py-2">
-            <img class = "w-8/12  rounded-sm "src = "/img/avators/alice.jpg">
+            <img class = "w-8/12  rounded-sm "src = {{this.thumbnail}}>
             <button id="addToListBtn" class="text-sky-100 text-center bg-orange-950 w-28 h-5 m-1 shadow-inner shadow-white">Add to List</button>
             <!-- Dropdown using <select> -->
             <select id="listSelect" class="hidden">
@@ -76,12 +76,12 @@
             </select>
         </div>
         <div class = "flex flex-col w-10/12 mr-8">
-            <p class = "text-orange-950 text-left text-2xl justify-self-center font-bold 
-            antialiased mt-2 " >{{this.title}}<span class = " text-blue-600 text-sm">{{this.pubDate}}</span></p>
+            <p id= "tile" class = "text-orange-950 text-left text-2xl justify-self-center font-bold 
+            antialiased mt-2 " >{{this.title}}<span id="pubDate" class = " text-blue-600 text-sm">{{this.pubDate}}</span></p>
 
-            <p class = "text-orange-950 text-left text-lg justify-self-center font-bold 
+            <p id = "author" class = "text-orange-950 text-left text-lg justify-self-center font-bold 
             antialiased my-2" >{{this.authorName}}</p>
-            <p class = "text-orange-950 text-left text-lg justify-self-center font-serif
+            <p id = "ISBN" class = "text-orange-950 text-left text-lg justify-self-center font-serif
             antialiased"  >{{this.ISBN}}</p> 
             <p class = "text-orange-950 text-left text-lg justify-self-center  font-bold 
             antialiased " >{{this.pageCount}}</p>
