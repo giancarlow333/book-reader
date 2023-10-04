@@ -25,29 +25,31 @@ router.use('/bookdetail', bookdetailRoutes);
 
 router.get('/', async (req, res) => {
 	if (req.session.username){
-		res.redirect('/search')
+		//res.redirect('/search')
+  		return res.redirect('/search/Wind-up%20Girl')
+
 	}
 	else
-	res.render('index', { layout: "main", title: "Sign In", test: "Test" })
+	return res.render('index', { layout: "main", title: "Sign In", test: "Test" })
 });
 
 router.get('/signup', async (req, res) => {
 	if (req.session.username){
-		res.redirect('/search')
+		return res.redirect('/search')
 	}
 	else
-	res.render('signup', { layout: "main", title: "Sign Up", test: "Test" })
+	return res.render('signup', { layout: "main", title: "Sign Up", test: "Test" })
 
 });
 
-router.get('/search', async (req, res) => {
-	if (req.session.username) {
-		res.render('search', { layout: "main", title: "search", username: req.session.username })
-	}
-	else {
-		res.redirect('/');
-	}
-});
+// router.get('/search', async (req, res) => {
+// 	if (req.session.username) {
+// 		res.render('search', { layout: "main", title: "search", username: req.session.username })
+// 	}
+// 	else {
+// 		res.redirect('/');
+// 	}
+// });
 
 module.exports = router;
 

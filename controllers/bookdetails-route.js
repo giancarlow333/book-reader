@@ -10,6 +10,8 @@ const { Op } = require("sequelize");
 router.get('/:id', async (req, res) => {
   try {
     // Search the database for a book with an id that matches params
+    let books = await Book.findAll();
+    console.log(books)
     const bookData = await Book.findByPk(req.params.id);
     console.log(bookData);
 
@@ -29,7 +31,7 @@ router.get('/:id', async (req, res) => {
     const book = bookData.get({ plain: true });
 
     // Render the 'bookdetail' template and pass the book into the template
-    res.render('bookdetail', { book });
+    res.render('book', { book });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -39,10 +41,10 @@ router.get('/:id', async (req, res) => {
 router.post('/note', async (req, res) => {
   try {
     const newNote = await Notes.create({
-      bookID: req.params.bookID,
-      creatorID: req.params.userID,
-      rating: req.params.rating,
-      notes: req.params.notes,
+      bookID: req.body.bookID,
+      creatorID: req.body.userID,
+      rating: req.body.rating,
+      notes: req.body.notes,
     });
 
     

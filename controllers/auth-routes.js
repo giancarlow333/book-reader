@@ -102,7 +102,7 @@ router.post("/login", async (req, res) => {
     CreateSessionData(req, user);
 
     console.log("success");
-    res.redirect("../results");
+    res.redirect("../");
     return;
   } catch (e) {
     console.log(e);
