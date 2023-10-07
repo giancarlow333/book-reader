@@ -21,20 +21,21 @@ function bookQuery(searchTerm) {
           if (result.subtitle) {
             result.title = result.title + ": " + result.subtitle;
           }
-          // result.industryIdentifiers = result.industryIdentifiers.find(
-          //   function () {
-          //     return (type = "ISBN_13");
-          //   }
-          // );
-          if(result.industryIdentifiers)
-            result.industryIdentifiers = result.industryIdentifiers.identifier;
+          if(result.industryIdentifiers) {
+           result.industryIdentifiers = result.industryIdentifiers.find(
+             function () {
+               return (type = "ISBN_13");
+             }
+           );
+           result.industryIdentifiers = result.industryIdentifiers.identifier;}
           if(!result.publishedDate){
-            result.publishedDate = "";
+            result.publishedDate = "not listed";
           }
             result.publishedDate = result.publishedDate.substring(0, 4);
           if(!result.description){
-            result.description = ""; // Some results do not have descriptions, so we force one on it.
+            result.description = "not listed"; // Some results do not have descriptions, so we force one on it.
           }
+          result.fulldescription = result.description;
           result.description = result.description.substring(0, 265) + "...";
           return result;
         });
@@ -43,8 +44,6 @@ function bookQuery(searchTerm) {
       }
       else {
       reject(error);}
-
-      // results;
     });
   });
 }

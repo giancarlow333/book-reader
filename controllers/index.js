@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
 
 	}
 	else
-	return res.render('index', { layout: "main", title: "Sign In", test: "Test" })
+	return res.render('index', { layout: "sign-in", title: "Sign In", test: "Test" })
 });
 
 router.get('/signup', async (req, res) => {
@@ -38,7 +38,7 @@ router.get('/signup', async (req, res) => {
 		return res.redirect('/search')
 	}
 	else
-	return res.render('signup', { layout: "main", title: "Sign Up", test: "Test" })
+	return res.render('signup', { layout: "sign-in", title: "Sign Up", test: "Test" })
 
 });
 
