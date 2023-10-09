@@ -1,19 +1,33 @@
+//
+
 var searchTerm = document.querySelectorAll("#search");
 var addButtons = document.querySelectorAll("#addToListBtn");
-var searchData = [];
-var titleAll = document.querySelectorAll("#title");
-var ISBNall = document.querySelectorAll("#ISBN");
-var authorAll = document.querySelectorAll("#author");
-var pubDateAll = document.querySelectorAll("#pubDate");
-var pageCountAll = document.querySelectorAll("#pageCount");
-var descriptionAll = document.querySelectorAll("#description");
-var thumbnailAll = document.querySelectorAll("#thumbnail").src;
+var searchData = localStorage.getItem('searchinfo');
 
-addEventListener;
+const herokuAPI = "https://ravishing-reads-a2209ea97ad8.herokuapp.com/"
 
-fetch("local").then(function (response) {
+console.log(searchData)
+//var titleAll = document.querySelectorAll("#title");
+//var ISBNall = document.querySelectorAll("#ISBN");
+//var authorAll = document.querySelectorAll("#author");
+//var pubDateAll = document.querySelectorAll("#pubDate").innertext;
+//var pageCountAll = document.querySelectorAll("#pageCount");
+//var descriptionAll = document.querySelectorAll("#description");
+//var thumbnailAll = document.querySelectorAll("#thumbnail").src;
+
+addButtons.addEventListener("click", function checking(event) {
+  event.preventDefault();
+
+var searchAPI = herokuAPI + "search/" + searchTerm
+ fetch(searchAPI)
+.then(function (response) {
   return response.json();
-});
+})
+.then(function (data) {
+
+})
+})
+
 
 resultName.innerHTML = storedSearches[index].location;
 //setting current weather

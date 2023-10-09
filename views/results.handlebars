@@ -48,7 +48,7 @@
             <div class = "flex justify-center items-center flex-col w-5/6 h-1/4 " >
 
                 <form class = "w-10/12  h-14 flex flex-row justify-top items-center text-orange-900 border-b-4 border-orange-900 rounded-full bg-white  bg-opacity-80 font-serif " autocomplete="off" >
-                <input class = "w-full  h-full  pl-6 bg-transparent
+                <input id = "search" class = "w-full  h-full  pl-6 bg-transparent
                  placeholder:text-orange-900 placeholder:italic text-3xl rounded-full" type = "text" name = "search" placeholder = "Find Me A Book..."/>
                  <button type = "submit" class = " self-end flex-none h-full rounded-full mr-3" ><img class = "w-10 rounded-full "src = "./img/Backgrounds/search-Icon3.png"></button>
                 </form>
@@ -57,9 +57,9 @@
 <!--Book Details-->
 <div class = "flex flex-col justify-top items-center  flex-col w-full h-full overflow-auto">
 {{#each results}}
-    <div class = "flex flex-row bg-white  bg-opacity-80 w-10/12 h-64 shadow-md shadow-slate-900 rounded-md shrink mb-2">
+    <div class = "flex flex-row bg-white  bg-opacity-80 w-10/12 shadow-md shadow-slate-900 rounded-md shrink mb-2">
         <div class = "flex flex-col justify-center items-center w-2/12 py-2">
-            <img class = "w-8/12  rounded-sm "src = {{this.thumbnail}}>
+            <img class = "w-8/12  rounded-sm" src = {{this.thumbnail}}>
             <button id="addToListBtn" class="text-sky-100 text-center bg-orange-950 w-18 m-1 shadow-inner shadow-white">Add to List</button>
             <!-- Dropdown using <select> -->
             <select id="listSelect" class="hidden">
@@ -77,9 +77,9 @@
             antialiased my-2" >By: {{this.authors}}</p>
             <p id = "ISBN" class = "text-orange-950 text-left justify-self-center font-serif
             antialiased"  >ISBN: {{this.industryIdentifiers}}</p> 
-            <p class = "text-orange-950 text-left justify-self-center  font-bold 
+            <p id = "pageCount" class = "text-orange-950 text-left justify-self-center  font-bold 
             antialiased " >{{this.pageCount}} pages</p>
-            <p class = "text-orange-950 text-left justify-self-center font-bold 
+            <p id = "description" class = "text-orange-950 text-left justify-self-center font-bold 
             antialiased"  >{{this.description}}</p>  
         </div>
         

@@ -12,9 +12,10 @@ router.get('/', (req, res) => {
      const results = JSONresults
      console.log(results)
      res.render('results', { results })
-     res.render('results', { layout: "main", view: "results", title: "Find a Book", test: "Test" });
-    
-     return results
+    // res.render('results', { layout: "main", view: "results", title: "Find a Book", test: "Test" });
+     res.JSON(results)
+    // localStorage.setitem('searchinfo', JSON.stringify(results))
+     return 
  });
 
 //router.get('/:searchTerm', async (req, res) => {
