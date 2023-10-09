@@ -7,7 +7,7 @@ var authorAll = document.querySelectorAll("#author");
 var pubDateAll = document.querySelectorAll("#pubDate");
 var pageCountAll = document.querySelectorAll("#pageCount");
 var descriptionAll = document.querySelectorAll("#description");
-var thumbnailAll = document.querySelectorAll("#thumbnail");
+var thumbnailAll = document.querySelectorAll("#thumbnail").src;
 
 addEventListener;
 

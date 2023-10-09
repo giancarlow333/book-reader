@@ -26,7 +26,7 @@ router.use('/bookdetail', bookdetailRoutes);
 router.get('/', async (req, res) => {
 	if (req.session.username){
 		//res.redirect('/search')
-  		return res.redirect('/search/Wind-up%20Girl')
+  		return res.redirect('/search')
 
 	}
 	else

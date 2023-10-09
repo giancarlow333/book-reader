@@ -37,6 +37,7 @@ function bookQuery(searchTerm) {
           }
           result.fulldescription = result.description;
           result.description = result.description.substring(0, 265) + "...";
+          result.authors = result.authors[1] + result.authors[2] + result.authors[3], + result.authors[4], result.authors[5]
           return result;
         });
 
