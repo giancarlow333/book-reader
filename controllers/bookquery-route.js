@@ -13,23 +13,21 @@ router.get('/', (req, res) => {
      console.log(results)
      res.render('results', { results })
     // res.render('results', { layout: "main", view: "results", title: "Find a Book", test: "Test" });
-     res.JSON(results)
     // localStorage.setitem('searchinfo', JSON.stringify(results))
      return 
  });
 
-//router.get('/:searchTerm', async (req, res) => {
- //try { const searchTerm = req.params.searchTerm  || "Windup Girl"
- // console.log(searchTerm)
- //   const results = await bookQuery(searchTerm) 
- //   console.log("Before Search");
- //   console.log(results)
- //   console.log("Before Render");
- //   res.render('results', { results });
- // } catch (err) {
-  //  console.log(err);
-  //  res.status(500).json(err);
-//}});
+router.get(`/:searchTerm`, async (req, res) => {
+ try { const searchTerm = req.params.searchTerm  || "Windup Girl"
+  console.log(searchTerm)
+    const results = await bookQuery(searchTerm) 
+    console.log(results)
+   // res.json(results)
+    res.render('results', { results });
+  } catch (err) {
+    console.log(err);
+   res.status(500).json(err);
+}});
 
 module.exports = router
 
