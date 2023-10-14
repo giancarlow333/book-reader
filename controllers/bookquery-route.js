@@ -29,5 +29,16 @@ router.get(`/:searchTerm`, async (req, res) => {
    res.status(500).json(err);
 }});
 
+router.get(`/:searchTerm/json`, async (req, res) => {
+  try { const searchTerm = req.params.searchTerm  || "Windup Girl"
+   console.log(searchTerm)
+     const results = await bookQuery(searchTerm) 
+     console.log(results)
+     res.json(results)
+   } catch (err) {
+     console.log(err);
+    res.status(500).json(err);
+ }});
+
 module.exports = router
 

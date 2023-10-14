@@ -6,7 +6,7 @@ var addButtons = document.querySelectorAll("#addToListBtn");
 var searchData = localStorage.getItem("searchinfo");
 
 //const herokuAPI = "https://ravishing-reads-a2209ea97ad8.herokuapp.com/";
-const herokuAPI = "http://localhost:3001/search/"
+const herokuAPI = "http://localhost:3001/search/";
 
 console.log(searchData);
 //var titleAll = document.querySelectorAll("#title");
@@ -22,9 +22,11 @@ searchButton.addEventListener("click", function checking(event) {
   searchTerm = searchQuery.value;
   console.log(searchTerm);
   var searchAPI = herokuAPI + searchTerm;
+  var searchAPIJSON = searchAPI + "/json"
+  location.replace(searchAPI)
   console.log(searchAPI);
-  fetch(searchAPI)
-   .then(function (response) {
+  fetch(searchAPIJSON)
+    .then(function (response) {
       localStorage.setItem("search", response);
       console.log(response);
       return response.json();
@@ -36,7 +38,7 @@ searchButton.addEventListener("click", function checking(event) {
 });
 
 //addButtons.addEventListener("click", function bookadd(event) {
- //event.preventDefault();
+//event.preventDefault();
 //  var x =2
 //});
 
