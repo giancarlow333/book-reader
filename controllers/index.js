@@ -5,39 +5,51 @@ const listRoutes = require('./list-routes.js');
 // const apiRoutes = require('./api-routes.js');
 const userRoutes = require('./user-routes.js')
 const authRoutes = require('./auth-routes.js');
-const bookqueryRoutes = require("./bookquery.route.js")
+const bookqueryRoutes = require("./bookquery-route.js")
+const bookdetailRoutes = require("./bookdetails-route.js")
 
-router.use('/', bookRoutes);
-router.use('/', listRoutes);
+// do we need this? - JW
+const {
+	Todo,
+	User,
+} = require('./../models');
+
+
+router.use('/book', bookRoutes);
+router.use('/list', listRoutes);
 router.use('/user', userRoutes);
 router.use('/auth', authRoutes);
 router.use('/search', bookqueryRoutes);
+router.use('/bookdetail', bookdetailRoutes);
+
 
 router.get('/', async (req, res) => {
 	if (req.session.username){
-		res.redirect('/results')
+		//res.redirect('/search')
+  		return res.redirect('/search')
+
 	}
 	else
-	res.render('index', { layout: "main", title: "Sign Up", test: "Test" })
+	return res.render('index', { layout: "sign-in", title: "Sign In", test: "Test" })
 });
 
 router.get('/signup', async (req, res) => {
 	if (req.session.username){
-		res.redirect('/results')
+		return res.redirect('/search')
 	}
 	else
-	res.render('signup', { layout: "main", title: "Sign Up", test: "Test" })
+	return res.render('signup', { layout: "sign-in", title: "Sign Up", test: "Test" })
 
 });
 
-router.get('/results', async (req, res) => {
-	if (req.session.username) {
-		res.render('results', { layout: "main", title: "results", username: req.session.username })
-	}
-	else {
-		res.redirect('/signup');
-	}
-});
+// router.get('/search', async (req, res) => {
+// 	if (req.session.username) {
+// 		res.render('search', { layout: "main", title: "search", username: req.session.username })
+// 	}
+// 	else {
+// 		res.redirect('/');
+// 	}
+// });
 
 module.exports = router;
 

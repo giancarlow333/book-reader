@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3001;
 const sess = {
     secret: 'Super secret secret',
     cookie: {},
-    resave: false,
+    resave: true,
     saveUninitialized: true,
     // store: new SequelizeStore({
     //     db: sequelize,
@@ -57,6 +57,7 @@ app.use(require('./controllers/index.js'))
 // Connect to the db prior to starting our server;
 // Force the db to drop/recreate the table whenever we start/restart our server (DO NOT DO THIS IN PRODUCTION OR YOU WILL DELETE INFO IN SERVER)
 //make sure to know when you want to force true or false
-sequelize.sync({ force: true }).then(() => {
+/// NOTE: use force: false, for PRODUCTION or to preserve server data
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
 });

@@ -22,7 +22,7 @@ router.get('/', withAuth, async (req, res) => {
 */
 
 // GET all books in a particular list
-router.get('/list/:listid',  async (req, res) => {
+router.get('/:listid',  async (req, res) => {
     try {
         const listBooks = await ListContents.findByPk(req.params.listid, {
             include: Book
@@ -36,6 +36,20 @@ router.get('/list/:listid',  async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.post('/:listName', async (req, res) => {
+    try {
+      const newList = await List.create({
+        listName: req.params.listName,
+        creatorID: req.params.userID,
+      });
+  
+      
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
 
 
 module.exports = router;

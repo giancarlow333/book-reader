@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 // GET one book
 // withAuth makes sure you're logged in before showing you any pages
-router.get('/book/:id', withAuth, async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   try {
     const dbBookData = await Book.findByPk(req.params.id, {
       include: [
@@ -18,7 +18,8 @@ router.get('/book/:id', withAuth, async (req, res) => {
             'pubDate',
             'publisher',
             'pageCount',
-            'availability'
+            'bookLink',
+            'imgLink'
           ],
         },
       ],
@@ -33,18 +34,20 @@ router.get('/book/:id', withAuth, async (req, res) => {
 });
 
 // POST a book to the database
-router.post('/book', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newBook = await Book.create({
-      title: req.params.title,
-      authorName: req.params.authorName,
-      ISBN: req.params.ISBN,
-      pubDate: req.params.pubDate,
-      publisher: req.params.publisher,
-      pageCount: req.params.pageCount,
-      availability: req.params.availability
+      title: req.body.title,
+      authorName: req.body.authorName,
+      ISBN: req.body.ISBN,
+      pubDate: req.body.pubDate,
+      publisher: req.body.publisher,
+      pageCount: req.body.pageCount,
+      bookLink: req.body.bookLink,
+      imgLink: req.body.imgLink,
     });
 
+    res.status(200).json(newBook);
     
   } catch (err) {
     console.log(err);
