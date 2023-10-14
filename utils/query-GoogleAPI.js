@@ -17,34 +17,53 @@ function bookQuery(searchTerm) {
         // console.log(results[0]);
         // console.log(results[1].title)
         const cleanResults = results.map((result) => {
-          console.log(result);
+          //console.log(result);
           if (result.subtitle) {
             result.title = result.title + ": " + result.subtitle;
           }
-          // result.industryIdentifiers = result.industryIdentifiers.find(
-          //   function () {
-          //     return (type = "ISBN_13");
-          //   }
-          // );
-          if(result.industryIdentifiers)
+          if (result.industryIdentifiers) {
+            result.industryIdentifiers = result.industryIdentifiers.find(
+              function () {
+                return (type = "ISBN_13");
+              }
+            );
             result.industryIdentifiers = result.industryIdentifiers.identifier;
-          if(!result.publishedDate){
-            result.publishedDate = "";
           }
-            result.publishedDate = result.publishedDate.substring(0, 4);
-          if(!result.description){
-            result.description = ""; // Some results do not have descriptions, so we force one on it.
+          if (!result.publishedDate) {
+            result.publishedDate = "not listed";
           }
+          result.publishedDate = result.publishedDate.substring(0, 4);
+          if (!result.description) {
+            result.description = "not listed"; // Some results do not have descriptions, so we force one on it.
+          }
+          result.fulldescription = result.description;
           result.description = result.description.substring(0, 265) + "...";
+          //trying to iterate over potential array of author names to include all listed
+         //if (authorslist.length > 1) {
+         // function concat () {
+          //  for (i=0, i<authorslist.length, i++){
+          //  author = author + ", " + authorslist[i];
+          //  return author
+         // }
+        //  }
+         // let authorslist = result.authors;
+         // console.log(authorslist.length)
+        //  console.log (authorslist)
+        //  let [author] = authorslist[1]
+        //  console.log (author)
+         // authorslist.foreach(author => {
+          //  var authorsConcat = authorsConcat + ", " + author;
+         // });
+        //  result.authors = result.authors[0]
+
           return result;
-        });
+        })
 
-        resolve(cleanResults);
+        resolve(cleanResults)
+        console.log(cleanResults);
+      } else {
+        reject(error);
       }
-      else {
-      reject(error);}
-
-      // results;
     });
   });
 }
