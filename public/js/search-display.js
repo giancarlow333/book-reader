@@ -7,7 +7,7 @@ var searchData = localStorage.getItem("searchinfo");
 var listSelect = document.querySelectorAll("#listSelect");
 var resultsBox = document.querySelector("#results");
 
-const herokuAPI = "https://ravishing-reads-a2209ea97ad8.herokuapp.com/";
+//const herokuAPI = "https://ravishing-reads-a2209ea97ad8.herokuapp.com/";
 //const herokuAPI = "http://localhost:3001/";
 
 console.log(searchData);
@@ -18,7 +18,7 @@ searchButton.addEventListener("click", function checking(event) {
   event.preventDefault();
   searchTerm = searchQuery.value;
   console.log(searchTerm);
-  var searchAPI = herokuAPI + "search/" + searchTerm;
+  var searchAPI = "search/" + searchTerm;
   var searchAPIJSON = searchAPI + "/json";
   console.log(searchAPI);
   fetch(searchAPIJSON)
@@ -67,7 +67,7 @@ function addToList(event) {
     if (listSelect[index].classList.contains("hidden")) {
       listSelect[index].classList.remove("hidden");
       listSelect[index].classList.add("visible");
-      let addAPI = herokuAPI + "book/";
+      let addAPI = "book/";
       let bookInfo = {
         title: searchData[index].title,
         authorName: searchData[index].authors[0],
