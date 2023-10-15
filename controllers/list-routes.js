@@ -7,10 +7,10 @@ router.get('/', withAuth, async (req, res) => {
     try {
         const lists = await List.findByPk(req.params.creatorID, {
             include: [{
-                model: List,
-                attributes: [ 'bookID' ]
+                model: List
             }]
         });
+        console.log(lists);
 
         const list = lists.get({ plain: true });
       //  res.render('index', { list });
