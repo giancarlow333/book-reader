@@ -60,7 +60,7 @@ function addToList(event) {
   // Convert the `data-count` attribute from a string to an integer.
   //let bookBtn = event.target
   let index = parseInt(event.target.getAttribute("datacount"));
-  console.log(listSelect[index].classlist);
+ // console.log(listSelect[index].classlist);
 
   // Check to see if the element is a button.
   if (event.target.matches("button")) {
@@ -95,9 +95,12 @@ function addToList(event) {
         .catch((error) => {
           console.error("Error in POST request:", error);
         });
+
     } else {
+      console.log(listSelect[index].value)
       listSelect[index].classList.remove("visible");
       listSelect[index].classList.add("hidden");
+      
     }
   }
 }
