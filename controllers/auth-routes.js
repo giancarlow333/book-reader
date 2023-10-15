@@ -124,6 +124,7 @@ function CreateSessionData(req, user) {
   //session variables
   req.session.username = user.username;
   req.session.email = user.email;
+  req.session.id = user.id;
 }
 
 module.exports = router;

@@ -2,8 +2,8 @@ const router = require('express').Router();
 const { Book, List, ListContents } = require('../models');
 const withAuth = require('../utils/auth');
 
-// Return user lists
-router.get('/', async (req, res) => {
+//GET 
+router.get('/', withAuth, async (req, res) => {
     try {
         const lists = await List.findByPk(req.params.creatorID, {
             include: [{
@@ -13,8 +13,7 @@ router.get('/', async (req, res) => {
         console.log(lists);
 
         const list = lists.get({ plain: true });
-        console.log(list);
-        //res.render('list', { list });
+      //  res.render('index', { list });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
