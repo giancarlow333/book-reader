@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
      return 
  });
 
+ //displaying search results
 router.get(`/:searchTerm`, async (req, res) => {
  try { const searchTerm = req.params.searchTerm  || "Windup Girl"
   console.log(searchTerm)
@@ -29,6 +30,7 @@ router.get(`/:searchTerm`, async (req, res) => {
    res.status(500).json(err);
 }});
 
+//returning search results as json to be stored 
 router.get(`/:searchTerm/json`, async (req, res) => {
   try { const searchTerm = req.params.searchTerm  || "Windup Girl"
    console.log(searchTerm)

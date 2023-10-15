@@ -4,7 +4,7 @@ const options = {
   // key: "YOUR API KEY",
   // field: 'title',
   //  offset: 0,
-  limit: 15,
+  limit: 2,
   type: "books",
   //  order: 'relevance',
   //  lang: 'en'
