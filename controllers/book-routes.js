@@ -1,5 +1,5 @@
 const router = require('express').Router();
-
+const { Book, Notes, ListContents } = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET one book
