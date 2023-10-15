@@ -8,7 +8,7 @@ var listSelect = document.querySelectorAll("#listSelect");
 var resultsBox = document.querySelector("#results");
 
 //const herokuAPI = "https://ravishing-reads-a2209ea97ad8.herokuapp.com/";
-//const herokuAPI = "http://localhost:3001/";
+const herokuAPI = "http://localhost:3001/";
 
 console.log(searchData);
 
