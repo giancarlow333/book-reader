@@ -55,7 +55,7 @@ Book.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'book',
+    modelName: 'Book',
   }
 );
 
