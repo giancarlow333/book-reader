@@ -70,7 +70,7 @@ function addToList (event) {
     let addAPI = "book/"
     let bookInfo = {
       title: searchData[index].title,
-      authorName: searchData[index].authors,
+      authorName: searchData[index].authors[0],
       ISBN: searchData[index].industryIdentifiers,
       pubDat: searchData[index].publishedDate,
       publisher: searchData[index].publisher,
@@ -80,13 +80,22 @@ function addToList (event) {
       description: searchData[index].fulldescription,
     }
     console.log(bookInfo)
-    post(addAPI)(bookInfo)
-    
-    // Set the newly incremented `count` variable to the `data-count` attribute.
-    event.target.setAttribute('data-count', count);
-
-    // Update what the button's display to show the correct amount of clicks.
-    event.target.textContent = `Clicks: ${count}`;
+    fetch(addAPI, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(bookInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log('Successful POST request:', data);
+        return data;
+      })
+      .catch((error) => {
+        console.error('Error in POST request:', error);
+      });
+  
   }
 
 };
