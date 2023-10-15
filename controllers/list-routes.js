@@ -10,10 +10,11 @@ router.get('/', async (req, res) => {
                 model: List
             }]
         });
+        console.log(lists);
 
         const list = lists.get({ plain: true });
         console.log(list);
-        res.render('list', { list });
+        //res.render('list', { list });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
