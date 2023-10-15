@@ -4,27 +4,9 @@ const withAuth = require('../utils/auth');
 
 // GET one book
 // withAuth makes sure you're logged in before showing you any pages
-router.get('/:id', withAuth, async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
-    const dbBookData = await Book.findByPk(req.params.id, {
-      include: [
-        {
-          model: Book,
-          attributes: [
-            'id',
-            'title',
-            'authorName',
-            'ISBN',
-            'pubDate',
-            'publisher',
-            'pageCount',
-            'bookLink',
-            'imgLink',
-            'description'
-          ],
-        },
-      ],
-    });
+    const dbBookData = await Book.findByPk(req.params.id);
 
     const book = dbBookData.get({ plain: true });
     res.render('book', { book });
