@@ -32,9 +32,14 @@
 
                 <div id = "listLists" class = "w-full flex flex-col justify-top items-center">
                     <p class = "my-6 text-orange-900 text-3xl text-center antialiased w-3/4 bg-white mb-2.5 bg-opacity-80 border-t-2 border-orange-900 ">My Shelves</p>
+                   <!-- HTML to iterate over list of lists - implement later
                     {{#each lists}}
                     <button id = "listName" class = "text-sky-100 my-6 flex text-center text-3xl font-serif antialiased bg-orange-900 rounded-md w-3/4 mb-2.5 shadow-inner shadow-white opacity-90">{{this.name}}</button>
-                   {{/each}} 
+                   {{/each}} -->
+                    <button id = "readingList" class = "text-sky-100 my-6 flex text-center text-3xl font-serif antialiased bg-orange-900 rounded-md w-3/4 mb-2.5 shadow-inner shadow-white opacity-90">Reading</button>
+                    <button id = "wishList" class = "text-sky-100 my-6 flex text-center text-3xl font-serif antialiased bg-orange-900 rounded-md w-3/4 mb-2.5 shadow-inner shadow-white opacity-90">Wishlist</button>
+                    <button id = "favList" class = "text-sky-100 my-6 flex text-center text-3xl font-serif antialiased bg-orange-900 rounded-md w-3/4 mb-2.5 shadow-inner shadow-white opacity-90">Favorites</button>
+                    <button id = "readList" class = "text-sky-100 my-6 flex text-center text-3xl font-serif antialiased bg-orange-900 rounded-md w-3/4 mb-2.5 shadow-inner shadow-white opacity-90">Already Read</button>
                     <button id = "newBookshelf" class = "text-sky-100 my-6 text-center text-3xl font-serif antialiased bg-orange-950 rounded-md w-9/12 mb-2.5 shadow-inner shadow-white opacity-90">New Bookshelf </button>
                 </div>
                  <div class = "w-full flex flex-col justify-top items-center" id="header">
@@ -66,6 +71,7 @@
             <option value="readingList">Reading List</option>
             <option value="wishlist">Wishlist</option>
             <option value="favorites">Favorites</option>
+            <option value="alreadyread">Already Read</option>
             </select>
         </div>
         <div class = "flex flex-col w-10/12 mr-8">

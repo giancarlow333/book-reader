@@ -34,9 +34,17 @@ router.post("/signup", async (req, res, next) => {
     });
     console.log(newUser);
 
-    const toReadList = await List.create({
+    const readingList = await List.create({
       creatorID: newUser.id,
-      listName: "To Read",
+      listName: "Reading List",
+    });
+    const wishList = await List.create({
+      creatorID: newUser.id,
+      listName: "Wishlist",
+    });
+    const favoritesList = await List.create({
+      creatorID: newUser.id,
+      listName: "Favorites",
     });
     const alreadyReadList = await List.create({
       creatorID: newUser.id,
