@@ -35,7 +35,7 @@ searchButton.addEventListener("click", function checking(event) {
     });
 //localStorage.setItem(("search.json", response.json));
 
-  // location.replace(searchAPI)
+   location.replace(searchAPI)
 });
 
 //addButtons.addEventListener("click", function bookadd(event) {
@@ -55,17 +55,32 @@ accessResults();
 function addToList (event) {
   event.preventDefault()
 
-  var searchData = localStorage.getItem(("search"));
-  console.log(JSON.parse(searchData));
+  var searchInfo = localStorage.getItem(("search"));
+  //console.log(JSON.parse(searchData));
+  searchData = JSON.parse(searchInfo)
+  console.log(searchData);
   // Convert the `data-count` attribute from a string to an integer.
-  let bookBtn = event.target
+ //let bookBtn = event.target
   let index = parseInt(event.target.getAttribute('datacount'));
   console.log(listSelect.classlist)
 
   // Check to see if the element is a button.
   if (event.target.matches('button')) {
     listSelect[index].classList.remove("hidden")
-    fetch()
+    let addAPI = herokuAPI + "book/"
+    let bookInfo = {
+      title: searchData[index].title,
+      authorName: searchData[index].authors,
+      ISBN: searchData[index].industryIdentifiers,
+      pubDat: searchData[index].publishedDate,
+      publisher: searchData[index].publisher,
+      pageCount: searchData[index].pageCount,
+     //bookLink: searchData[index].link,
+      imgLink: searchData[index].thumbnail,
+      description: searchData[index].fulldescription,
+    }
+    console.log(bookInfo)
+    post(addAPI)(bookInfo)
     
     // Set the newly incremented `count` variable to the `data-count` attribute.
     event.target.setAttribute('data-count', count);

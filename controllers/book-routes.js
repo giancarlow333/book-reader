@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Book, List, ListContents } = require('../models');
+
 const withAuth = require('../utils/auth');
 
 // GET one book
@@ -19,7 +19,8 @@ router.get('/:id', withAuth, async (req, res) => {
             'publisher',
             'pageCount',
             'bookLink',
-            'imgLink'
+            'imgLink',
+            'description'
           ],
         },
       ],
@@ -45,6 +46,7 @@ router.post('/', async (req, res) => {
       pageCount: req.body.pageCount,
       bookLink: req.body.bookLink,
       imgLink: req.body.imgLink,
+      description: req.body.imgLink,
     });
 
     res.status(200).json(newBook);
