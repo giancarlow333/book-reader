@@ -28,7 +28,9 @@ router.get('/:id', async (req, res) => {
     console.log(noteData);
 
     // Serialize the object to include only the data needed
-    const book = bookData.get({ plain: true });
+    const bookinfo = bookData.get({ plain: true });
+    const notesinfo = noteData.get({ plain: true});
+    const book = bookinfo.concat(notesinfo)
 
     // Render the 'bookdetail' template and pass the book into the template
     res.render('book', { book });

@@ -6,7 +6,8 @@ const withAuth = require('../utils/auth');
 // withAuth makes sure you're logged in before showing you any pages
 router.get('/:id', async (req, res) => {
   try {
-    const dbBookData = await Book.findByPk(req.params.id);
+
+    const dbBookData = await Book.findByPk(req.params.id)
 
     const book = dbBookData.get({ plain: true });
     res.render('book', { book });
@@ -28,7 +29,7 @@ router.post('/', async (req, res) => {
       pageCount: req.body.pageCount,
       bookLink: req.body.bookLink,
       imgLink: req.body.imgLink,
-      description: req.body.imgLink,
+      description: req.body.description,
     });
 
     res.status(200).json(newBook);

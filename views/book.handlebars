@@ -1,113 +1,158 @@
-<body class= "h-screen w-screen flex flex-col justify-center items-center">
+<body class="h-screen w-screen flex flex-col justify-center items-center">
 
-    <section class = "flex flex-row justify-center items-center w-screen h-screen">
+    <section class="flex flex-row justify-center items-center w-screen h-screen">
 
-        <div class = "flex flex-row justify-center items-center w-1/4 h-full bg-repeat "  style= "background-image: url(./img/Backgrounds/bookpages.jpeg)">
+        <div class="flex flex-row justify-center items-center w-1/4 h-full bg-repeat "
+            style="background-image: url(./img/Backgrounds/bookpages.jpeg)">
 
-            <div class = "flex justify-top items-center flex-col h-full w-full font-serif backdrop-brightness-90 shadow-black shadow-2xl">
-                <h1 class = "my-7 text-orange-900 text-5xl text-center antialiased underline decoration-double underline-offset-8 bg-white pb-5 px-3 rounded-2xl bg-opacity-80">Ravishing Reads</h1>
-         
-                 <!-- Avatar -->
-                <div class= "rounded-full mb-8 border-8 border-amber-600 border-solid shadow-black shadow-xl">
+            <div
+                class="flex justify-top items-center flex-col h-full w-full font-serif backdrop-brightness-90 shadow-black shadow-2xl">
+                <h1
+                    class="my-7 text-orange-900 text-5xl text-center antialiased underline decoration-double underline-offset-8 bg-white pb-5 px-3 rounded-2xl bg-opacity-80">
+                    Ravishing Reads</h1>
+
+                <!-- Avatar -->
+                <div class="rounded-full mb-8 border-8 border-amber-600 border-solid shadow-black shadow-xl">
                     <img id="display_image" class="h-32 w-32 rounded-full bg-black " src="./img/avators/bookworm1.jpeg">
-                  </div>
-                
-                  <!-- Modal -->
-                  <button id="openModal" class = " bg-blue-800 rounded-md h-8 w-28 text-white shadow-black shadow-md" >My Avatar</button>
-                
-                  <!-- Avatar Modal -->
-                  <div id="avatarModal" class="modal ">
-                    <div class="modal-content">
-                      <span class="close">&times;</span>
-                      <div id="avatar-gallery">
-                        <img class="avatar-option" src="./img/avators/cat.jpeg" alt="Avatar 1">
-                        <img class="avatar-option" src="./img/avators/fox.jpeg" alt="Avatar 2">
-                        <img class="avatar-option" src="./img/avators/owl.png" alt="Avatar 3">
-                        <img class="avatar-option" src="./img/avators/panda.jpeg" alt="Avatar 4">
-                        <img class="avatar-option" src="./img/avators/pig.png" alt="Avatar 5">
-                        <img class="avatar-option" src="./img/avators/owl.png" alt="Avatar 6">
-                      </div>
-                    </div>
-                  </div>
-
-                <div class = "w-full flex flex-col justify-top items-center">
-                    <p class = "my-6 text-orange-900 text-3xl text-center text-left antialiased w-3/4 bg-white bg-opacity-80 border-t-2 border-orange-900 ">My Shelves</p>
-                    <button class = "text-sky-100 text-center text-3xl font-serif antialiased bg-orange-900 rounded-md w-9/12 h-14 mb-2.5 shadow-inner shadow-white opacity-90">Read</button>
-                    <button class = "text-sky-100 text-center text-3xl font-serif antialiased bg-orange-900 rounded-md w-9/12 h-14 mb-2.5 shadow-inner shadow-white opacity-90">Read Me</button>
-                    <button class = "text-sky-100 text-center text-3xl font-serif antialiased bg-orange-900 rounded-md w-9/12 h-14 mb-2.5 shadow-inner shadow-white opacity-90">My Collection</button>
-                    <button class = "text-sky-100 text-center text-3xl font-serif antialiased bg-orange-950 rounded-md w-9/12 h-14 mb-2.5 shadow-inner shadow-white opacity-90">New Bookshelf </button>
                 </div>
-                <div class = "w-full flex flex-col justify-top items-center" id="header">
-                    <h1 class = " my-6 text-orange-900 text-3xl items-centertext-center text-left antialiased w-3/4 bg-white bg-opacity-80 border-t-2 text-center border-orange-900 ">Welcome Al</h1>
-                    <a href="/auth/logout"><button class = "text-sky-100 text-center text-xl font-serif antialiased bg-red-900 rounded-md w-32 h-10 mb-2.5 shadow-inner shadow-white opacity-90">LOGOUT</button></a> 
+
+                <!-- Modal -->
+                <button id="openModal" class=" bg-blue-800 rounded-md h-8 w-28 text-white shadow-black shadow-md">My
+                    Avatar</button>
+
+                <!-- Avatar Modal -->
+                <div id="avatarModal" class="modal ">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div id="avatar-gallery">
+                            <img class="avatar-option" src="./img/avators/cat.jpeg" alt="Avatar 1">
+                            <img class="avatar-option" src="./img/avators/fox.jpeg" alt="Avatar 2">
+                            <img class="avatar-option" src="./img/avators/owl.png" alt="Avatar 3">
+                            <img class="avatar-option" src="./img/avators/panda.jpeg" alt="Avatar 4">
+                            <img class="avatar-option" src="./img/avators/pig.png" alt="Avatar 5">
+                            <img class="avatar-option" src="./img/avators/owl.png" alt="Avatar 6">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full flex flex-col justify-top items-center">
+                    <p
+                        class="my-6 text-orange-900 text-3xl text-center text-left antialiased w-3/4 bg-white bg-opacity-80 border-t-2 border-orange-900 ">
+                        My Shelves</p>
+                    <button
+                        class="text-sky-100 text-center text-3xl font-serif antialiased bg-orange-900 rounded-md w-9/12 h-14 mb-2.5 shadow-inner shadow-white opacity-90">Read</button>
+                    <button
+                        class="text-sky-100 text-center text-3xl font-serif antialiased bg-orange-900 rounded-md w-9/12 h-14 mb-2.5 shadow-inner shadow-white opacity-90">Read
+                        Me</button>
+                    <button
+                        class="text-sky-100 text-center text-3xl font-serif antialiased bg-orange-900 rounded-md w-9/12 h-14 mb-2.5 shadow-inner shadow-white opacity-90">My
+                        Collection</button>
+                    <button
+                        class="text-sky-100 text-center text-3xl font-serif antialiased bg-orange-950 rounded-md w-9/12 h-14 mb-2.5 shadow-inner shadow-white opacity-90">New
+                        Bookshelf </button>
+                </div>
+                <div class="w-full flex flex-col justify-top items-center" id="header">
+                    <h1
+                        class=" my-6 text-orange-900 text-3xl items-centertext-center text-left antialiased w-3/4 bg-white bg-opacity-80 border-t-2 text-center border-orange-900 ">
+                        Welcome Al</h1>
+                    <a href="/auth/logout"><button
+                            class="text-sky-100 text-center text-xl font-serif antialiased bg-red-900 rounded-md w-32 h-10 mb-2.5 shadow-inner shadow-white opacity-90">LOGOUT</button></a>
                 </div>
             </div>
-            
+
         </div>
 
 
-        <div class = "flex flex-col justify-top items-center h-full w-3/4 bg-repeat" style= "background-image: url(./img/Backgrounds/bakcground6.png)">
- <!--SearchBar-->       
-            <div class = "flex justify-center items-center flex-col w-5/6 h-1/4 " >
+        <div class="flex flex-col justify-top items-center h-full w-3/4 bg-repeat"
+            style="background-image: url(./img/Backgrounds/bakcground6.png)">
+            <!--SearchBar-->
+            <div class="flex justify-center items-center flex-col w-5/6 h-1/4 ">
 
-                <form class = "w-10/12  h-14 flex flex-row justify-top items-center text-orange-900 border-b-4 border-orange-900 rounded-full bg-white  bg-opacity-80 font-serif " autocomplete="off" >
-                <input class = "w-full  h-full  pl-6 bg-transparent
-                 placeholder:text-orange-900 placeholder:italic text-3xl rounded-full" type = "text" name = "search" placeholder = "Find Me A Book..."/>
-                 <button type = "submit" class = " self-end flex-none h-full rounded-full mr-3" ><img class = "w-10 rounded-full "src = "./img/Backgrounds/search-Icon3.png"></button>
+                <form
+                    class="w-10/12  h-14 flex flex-row justify-top items-center text-orange-900 border-b-4 border-orange-900 rounded-full bg-white  bg-opacity-80 font-serif "
+                    autocomplete="off">
+                    <input class="w-full  h-full  pl-6 bg-transparent
+                 placeholder:text-orange-900 placeholder:italic text-3xl rounded-full" type="text" name="search"
+                        placeholder="Find Me A Book..." />
+                    <button type="submit" class=" self-end flex-none h-full rounded-full mr-3"><img
+                            class="w-10 rounded-full " src="./img/Backgrounds/search-Icon3.png"></button>
                 </form>
-                <h2 class = "text-3xl mt-6 text-orange-400 sub-pixel-antialiased rounded-2xl bg-black bg-opacity-60 brightness-125 mb-6 font-serif ">“A reader lives a thousand lives before he dies”</h2>
+                <h2
+                    class="text-3xl mt-6 text-orange-400 sub-pixel-antialiased rounded-2xl bg-black bg-opacity-60 brightness-125 mb-6 font-serif ">
+                    “A reader lives a thousand lives before he dies”</h2>
             </div>
-<!--Book Details-->
-            <div class = "flex justify-between items-center  flex-col w-5/6 h-full overflow-auto bg-white opacity-90 brightness-100 ">
+            <!--Book Details-->
+            <div
+                class="flex justify-between items-center  flex-col w-5/6 h-full overflow-auto bg-white opacity-90 brightness-100 ">
                 <!--div 1-->
-                <div class = "flex flex-row justify-top items-top w-full h-3/5">
-                    <div class = "flex flex-col justify-top items-center w-1/4 p-6">
-                        <img class = "rounded-sm "src = "./public/css/img/avators/alice.jpg">
-                        <button class = "text-sky-100 text-center bg-orange-950 w-28 h-10 m-1 shadow-inner shadow-white">Remove Book</button>
+                <div class="flex flex-row justify-top items-top w-full h-3/5">
+                    <div class="flex flex-col justify-top items-center w-1/4 p-6">
+                        <img class="rounded-sm " src={{book.imgLink}}>
+                        <button
+                            class="text-sky-100 text-center bg-orange-950 w-28 h-10 m-1 shadow-inner shadow-white">Remove
+                            Book</button>
                     </div>
-                    <div class = " w-3/4 flex flex-col justify-top items-top ">
-                        <p class = "text-orange-950 text-left text-5xl justify-self-center font-serif 
-                        antialiased mt-2 " >{{book.title}}<span class = " text-blue-600 text-lg font-mono">{{this.pubDate}}</span></p>
-                
-                        <p class = "text-orange-950 text-left text-2xl justify-self-center font-serif
-                        antialiased my-2" >{{book.authorName}}</p>
-                        <p class = "text-orange-950 text-left text-lg justify-self-center font-serif
-                        antialiased"  >{{book.ISBN}}</p> 
-                        <p class = "text-orange-950 text-left text-lg justify-self-center font-serif
-                        antialiased"  >{{book.pageCount}}</p> 
-                        <p class = "text-orange-950 text-left text-lg justify-self-center font-serif
-                        antialiased"  >{{book.review}}</p> 
+                    <div class=" w-3/4 flex flex-col justify-top items-top ">
+                        <p id="title" class="text-orange-950 text-left text-2xl justify-self-center font-bold 
+                         antialiased mt-2 ">{{book.title}}<span id="pubDate" class=" text-orange-950 text-left text-lg justify-self-center font-bold 
+                            antialiased my-2"> ({{book.pubDate}})</span></p>
+
+                        <p class="text-orange-950 text-left text-2xl justify-self-center font-serif
+                        antialiased my-2">by {{book.authorName}}</p>
+                        <p class="text-orange-950 text-left text-lg justify-self-center font-serif
+                        antialiased">ISBN: {{book.ISBN}}</p>
+                        <p class="text-orange-950 text-left text-lg justify-self-center font-serif
+                        antialiased">Page Count: {{book.pageCount}}</p>
+                        <p class="text-orange-950 text-left text-lg justify-self-center font-serif
+                        antialiased">{{book.publisher}}</p>
+                         <p href = {{book.bookLink}} class="text-orange-950 text-left text-lg justify-self-center font-serif
+                        antialiased">Google Book Page</p>
                         <!--summary-->
-                        <p class = "text-orange-950 text-left text-lg justify-self-center h-56 font-serif antialiased overflow-y-auto" >{{this.summary}}</p>
-                
-                      
+                        <p
+                            class="text-orange-950 text-left text-med justify-self-center h-56 font-serif antialiased overflow-y-auto">
+                            {{book.description}}</p>
                     </div>
                 </div>
                 <!--div 2-->
-                <div class = " flex flex-col justify-evenly bg-orange-100 items-center w-10/12 h-2/5 mb-6">
-                    <h4 class ="font-serif text-orange-950 bg-orange-100 w-full text-2xl underline "> My Notes</h4>
-                    <textarea class = "w-full text-black h-full bg-orange-100">My Notes</textarea>
-                    <div class = "flex w-full items-center ">
-                        <button class = "text-sky-100 text-center bg-orange-950 w-28 h-15 shadow-inner shadow-white">Save</button>
+                <div class=" flex flex-col justify-evenly bg-orange-100 items-center w-10/12 h-2/5 mb-6">
+                    <center>
+                        <div class="wrapper">
+                            <div class="rating">
+                                <span name="0">{{this.rating}}</span>
+                                <span class="star" name="1">&#9733;</span>
+                                <span class="star" name="2">&#9733;</span>
+                                <span class="star" name="3">&#9733;</span>
+                                <span class="star" name="4">&#9733;</span>
+                                <span class="star" name="5">&#9733;</span>
+                            </div>
+                        </div>
+                    </center>
+                    <h4 class="font-serif text-orange-950 bg-orange-100 w-full text-2xl underline "> My Notes</h4>
+                    <textarea class="w-full text-black h-full bg-orange-100">{{book.notes}}</textarea>
+                    <div class="flex w-full items-center ">
+                        <button
+                            class="text-sky-100 text-center bg-orange-950 w-28 h-15 shadow-inner shadow-white">Save</button>
                     </div>
                 </div>
-                
+
             </div>
 
     </section>
-       <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
         function addDarkmodeWidget() {
             const options = {
-                label: '🌓', 
-         }
- 
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-         }
-         window.addEventListener('load', addDarkmodeWidget);
-    </script> 
+                label: '🌓',
+            }
 
-    <script src = "./public/js/avators.js"></script>
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+
+    <script src="./public/js/avators.js"></script>
+    <script src="./public/js/starrating.js"></script>
+    <script src="./public/js/listrender.js"></script>
 </body>

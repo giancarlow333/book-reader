@@ -22,7 +22,7 @@ router.get(`/:searchTerm`, async (req, res) => {
  try { const searchTerm = req.params.searchTerm  || "Windup Girl"
   console.log(searchTerm)
     const results = await bookQuery(searchTerm) 
-    console.log(results)
+    console.log(results[0])
    // res.json(results)
     res.render('results', { results });
   } catch (err) {
@@ -35,7 +35,7 @@ router.get(`/:searchTerm/json`, async (req, res) => {
   try { const searchTerm = req.params.searchTerm  || "Windup Girl"
    console.log(searchTerm)
      const results = await bookQuery(searchTerm) 
-     console.log(results)
+     console.log(results[0])
      res.json(results)
    } catch (err) {
      console.log(err);

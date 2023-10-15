@@ -21,14 +21,16 @@ function bookQuery(searchTerm) {
           if (result.subtitle) {
             result.title = result.title + ": " + result.subtitle;
           }
-          if (result.industryIdentifiers) {
-            result.industryIdentifiers = result.industryIdentifiers.find(
-              function () {
-                return (type = "ISBN_13");
-              }
-            );
-            result.industryIdentifiers = result.industryIdentifiers.identifier;
-          }
+          console.log(result.industryIdentifiers)
+          if (result.industryIdentifiers){
+           /*result.industryIdentifiers = result.industryIdentifiers.find(
+            function () {
+              return (type === "ISBN_13");
+            }
+          ) 
+          console.log(result.industryIdentifiers)*/
+          result.industryIdentifiers = result.industryIdentifiers[0].identifier}
+        
           if (!result.publishedDate) {
             result.publishedDate = "not listed";
           }
@@ -36,6 +38,7 @@ function bookQuery(searchTerm) {
           if (!result.description) {
             result.description = "not listed"; // Some results do not have descriptions, so we force one on it.
           }
+          result.buylink = result.link
           result.fulldescription = result.description;
           result.description = result.description.substring(0, 265) + "...";
           //trying to iterate over potential array of author names to include all listed
@@ -60,7 +63,7 @@ function bookQuery(searchTerm) {
         })
 
         resolve(cleanResults)
-        console.log(cleanResults);
+        console.log(cleanResults[0]);
       } else {
         reject(error);
       }
