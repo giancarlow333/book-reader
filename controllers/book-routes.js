@@ -6,9 +6,8 @@ const withAuth = require('../utils/auth');
 // withAuth makes sure you're logged in before showing you any pages
 router.get('/:id', async (req, res) => {
   try {
-    const dbBookData = await Book.findByPk(req.params.id, {
 
-    });
+    const dbBookData = await Book.findByPk(req.params.id)
 
     const book = dbBookData.get({ plain: true });
     res.render('book', { book });
