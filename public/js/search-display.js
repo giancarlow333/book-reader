@@ -60,11 +60,11 @@ function addToList (event) {
   // Convert the `data-count` attribute from a string to an integer.
   let bookBtn = event.target
   let index = parseInt(event.target.getAttribute('datacount'));
-  console.log(listSelect[index])
+  console.log(listSelect.classlist)
 
   // Check to see if the element is a button.
   if (event.target.matches('button')) {
-    listSelect[index].classlist.remove("hidden")
+    listSelect[index].classList.remove("hidden")
     fetch()
     
     // Set the newly incremented `count` variable to the `data-count` attribute.
