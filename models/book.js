@@ -45,6 +45,9 @@ Book.init(
     },
     imgLink: {
         type: DataTypes.STRING,
+    },
+    description: {
+        type: DataTypes.STRING,
     }
   },
   {
