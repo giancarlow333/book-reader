@@ -7,6 +7,7 @@ const userRoutes = require('./user-routes.js')
 const authRoutes = require('./auth-routes.js');
 const bookqueryRoutes = require("./bookquery-route.js")
 const bookdetailRoutes = require("./bookdetails-route.js")
+const userListRoutes = require("./userList-route.js")
 
 // do we need this? - JW
 const {
@@ -21,6 +22,7 @@ router.use('/user', userRoutes);
 router.use('/auth', authRoutes);
 router.use('/search', bookqueryRoutes);
 router.use('/bookdetail', bookdetailRoutes);
+router.use('/userlist', userListRoutes);
 
 
 router.get('/', async (req, res) => {

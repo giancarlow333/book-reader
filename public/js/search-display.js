@@ -7,8 +7,8 @@ var searchData = localStorage.getItem("searchinfo");
 var listSelect = document.querySelectorAll("#listSelect");
 var resultsBox = document.querySelector("#results");
 
-//const herokuAPI = "https://ravishing-reads-a2209ea97ad8.herokuapp.com/";
-const herokuAPI = "http://localhost:3001/";
+const herokuAPI = "https://ravishing-reads-a2209ea97ad8.herokuapp.com/";
+//const herokuAPI = "http://localhost:3001/";
 
 console.log(searchData);
 
@@ -72,12 +72,12 @@ function addToList(event) {
         title: searchData[index].title,
         authorName: searchData[index].authors[0],
         ISBN: searchData[index].industryIdentifiers,
-        pubDat: searchData[index].publishedDate,
+        pubDate: searchData[index].publishedDate,
         publisher: searchData[index].publisher,
         pageCount: searchData[index].pageCount,
-        //bookLink: searchData[index].link,
         imgLink: searchData[index].thumbnail,
         description: searchData[index].fulldescription,
+        bookLink: searchData[index].buylink,
       };
       console.log(bookInfo);
       fetch(addAPI, {
@@ -98,6 +98,7 @@ function addToList(event) {
 
     } else {
       console.log(listSelect[index].value)
+
       listSelect[index].classList.remove("visible");
       listSelect[index].classList.add("hidden");
       

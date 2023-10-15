@@ -3,7 +3,7 @@ const { Book, List, ListContents } = require('../models');
 const withAuth = require('../utils/auth');
 
 //GET 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const lists = await List.findByPk(req.params.creatorID, {
             include: [{
