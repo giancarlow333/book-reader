@@ -5,7 +5,7 @@ var searchButton = document.querySelector("#searchBtn");
 var addButtons = document.querySelectorAll("#addToListBtn");
 var searchData = localStorage.getItem("searchinfo");
 
-//const herokuAPI = "https://ravishing-reads-a2209ea97ad8.herokuapp.com/";
+//const herokuAPI = "https://ravishing-reads-a2209ea97ad8.herokuapp.com/search/";
 const herokuAPI = "http://localhost:3001/search/";
 
 console.log(searchData);
@@ -23,18 +23,21 @@ searchButton.addEventListener("click", function checking(event) {
   console.log(searchTerm);
   var searchAPI = herokuAPI + searchTerm;
   var searchAPIJSON = searchAPI + "/json"
-  location.replace(searchAPI)
   console.log(searchAPI);
   fetch(searchAPIJSON)
     .then(function (response) {
-      localStorage.setItem("search", response);
-      console.log(response);
+    //  localStorage.setItem(("searchB", response));
+     // console.log(response);
       return response.json();
     })
     .then(function (data) {
-      localStorage.setItem("search", data);
+      localStorage.setItem("search", JSON.stringify(data));
       console.log(data);
+      return data
     });
+//localStorage.setItem(("search.json", response.json));
+
+   location.replace(searchAPI)
 });
 
 //addButtons.addEventListener("click", function bookadd(event) {
@@ -43,8 +46,15 @@ searchButton.addEventListener("click", function checking(event) {
 //});
 
 function accessResults() {
-  searchData = localStorage.getItem("search");
-  console.log(searchData);
+ //var searchData = localStorage.getItem(JSON.parse("search"));
+ // var searchDataB = localStorage.getItem(("searchB"));
+  var searchData = localStorage.getItem(("search"));
+ // var searchDataJSON = localStorage.getItem(("search.json"));
+ // var searchDatabody = localStorage.getItem(("search.body"));
+  console.log((searchData));
+  console.log(JSON.parse(searchData));
+ // console.log(JSON.stringify(searchDatabody));
+ // console.log(JSON.stringify(searchDataJSON));
 }
 
 accessResults();
