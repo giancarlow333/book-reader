@@ -9,7 +9,7 @@ var resultsBox = document.querySelector("#results")
 
 
 //const herokuAPI = "https://ravishing-reads-a2209ea97ad8.herokuapp.com/";
-const herokuAPI = "http://localhost:3001/";
+//const herokuAPI = "http://localhost:3001/";
 
 console.log(searchData);
 
@@ -19,7 +19,7 @@ searchButton.addEventListener("click", function checking(event) {
   event.preventDefault();
   searchTerm = searchQuery.value;
   console.log(searchTerm);
-  var searchAPI = herokuAPI + "search/" + searchTerm;
+  var searchAPI = "search/" + searchTerm;
   var searchAPIJSON = searchAPI + "/json"
   console.log(searchAPI);
   fetch(searchAPIJSON)
@@ -67,7 +67,7 @@ function addToList (event) {
   // Check to see if the element is a button.
   if (event.target.matches('button')) {
     listSelect[index].classList.remove("hidden")
-    let addAPI = herokuAPI + "book/"
+    let addAPI = "book/"
     let bookInfo = {
       title: searchData[index].title,
       authorName: searchData[index].authors,
