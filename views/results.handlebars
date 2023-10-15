@@ -55,12 +55,12 @@
                 <h2 class = "text-3xl mt-6 text-orange-400 sub-pixel-antialiased rounded-2xl bg-black bg-opacity-60 brightness-125 mb-6 font-serif ">“A reader lives a thousand lives before he dies”</h2>
             </div>
 <!--Book Details-->
-<div class = "flex flex-col justify-top items-center  flex-col w-full h-full overflow-auto">
+<div id = "results" class = "flex flex-col justify-top items-center  flex-col w-full h-full overflow-auto">
 {{#each results}}
     <div class = "flex flex-row bg-white  bg-opacity-80 w-10/12 shadow-md shadow-slate-900 rounded-md shrink mb-2">
         <div class = "flex flex-col justify-center items-center w-2/12 py-2">
             <img class = "w-8/12  rounded-sm" src = {{this.thumbnail}}>
-            <button id="addToListBtn" class="text-sky-100 text-center bg-orange-950 w-18 m-1 shadow-inner shadow-white">Add to List</button>
+            <button datacount = {{@index}} id="addToListBtn" class="text-sky-100 text-center bg-orange-950 w-18 m-1 shadow-inner shadow-white">Add to List</button>
             <!-- Dropdown using <select> -->
             <select id="listSelect" class="hidden">
             <option value="readingList">Reading List</option>

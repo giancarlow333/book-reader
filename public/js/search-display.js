@@ -4,24 +4,22 @@ var searchQuery = document.querySelector("#search");
 var searchButton = document.querySelector("#searchBtn");
 var addButtons = document.querySelectorAll("#addToListBtn");
 var searchData = localStorage.getItem("searchinfo");
+var listSelect = document.querySelectorAll("#listSelect");
+var resultsBox = document.querySelector("#results")
 
-//const herokuAPI = "https://ravishing-reads-a2209ea97ad8.herokuapp.com/search/";
-const herokuAPI = "http://localhost:3001/search/";
+
+//const herokuAPI = "https://ravishing-reads-a2209ea97ad8.herokuapp.com/";
+const herokuAPI = "http://localhost:3001/";
 
 console.log(searchData);
-//var titleAll = document.querySelectorAll("#title");
-//var ISBNall = document.querySelectorAll("#ISBN");
-//var authorAll = document.querySelectorAll("#author");
-//var pubDateAll = document.querySelectorAll("#pubDate").innertext;
-//var pageCountAll = document.querySelectorAll("#pageCount");
-//var descriptionAll = document.querySelectorAll("#description");
-//var thumbnailAll = document.querySelectorAll("#thumbnail").src;
+
+console.log(addButtons);
 
 searchButton.addEventListener("click", function checking(event) {
   event.preventDefault();
   searchTerm = searchQuery.value;
   console.log(searchTerm);
-  var searchAPI = herokuAPI + searchTerm;
+  var searchAPI = herokuAPI + "search/" + searchTerm;
   var searchAPIJSON = searchAPI + "/json"
   console.log(searchAPI);
   fetch(searchAPIJSON)
@@ -37,7 +35,7 @@ searchButton.addEventListener("click", function checking(event) {
     });
 //localStorage.setItem(("search.json", response.json));
 
-   location.replace(searchAPI)
+  // location.replace(searchAPI)
 });
 
 //addButtons.addEventListener("click", function bookadd(event) {
@@ -46,15 +44,46 @@ searchButton.addEventListener("click", function checking(event) {
 //});
 
 function accessResults() {
- //var searchData = localStorage.getItem(JSON.parse("search"));
- // var searchDataB = localStorage.getItem(("searchB"));
   var searchData = localStorage.getItem(("search"));
- // var searchDataJSON = localStorage.getItem(("search.json"));
- // var searchDatabody = localStorage.getItem(("search.body"));
-  console.log((searchData));
   console.log(JSON.parse(searchData));
- // console.log(JSON.stringify(searchDatabody));
- // console.log(JSON.stringify(searchDataJSON));
+  return
 }
 
 accessResults();
+
+
+function addToList (event) {
+  event.preventDefault()
+
+  var searchData = localStorage.getItem(("search"));
+  console.log(JSON.parse(searchData));
+  // Convert the `data-count` attribute from a string to an integer.
+  let bookBtn = event.target
+  let index = parseInt(event.target.getAttribute('datacount'));
+  console.log(listSelect[index])
+
+  // Check to see if the element is a button.
+  if (event.target.matches('button')) {
+    listSelect[index].classlist.remove("hidden")
+    fetch()
+    
+    // Set the newly incremented `count` variable to the `data-count` attribute.
+    event.target.setAttribute('data-count', count);
+
+    // Update what the button's display to show the correct amount of clicks.
+    event.target.textContent = `Clicks: ${count}`;
+  }
+
+};
+
+resultsBox.addEventListener('click', addToList)
+
+//addButtons addtoList (event) {
+ // for(let i=0; i < addButtons.length; i++) {
+  //  addButtons[i].addEventListener("click", function (){
+
+ //   })
+
+ /// }
+//})
+
