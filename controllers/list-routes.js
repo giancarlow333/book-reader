@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Book, List, ListContents } = require('../models');
 const withAuth = require('../utils/auth');
 
- GW: Not sure where to put this
+//GET 
 router.get('/', withAuth, async (req, res) => {
     try {
         const lists = await List.findByPk(req.params.creatorID, {
@@ -13,7 +13,7 @@ router.get('/', withAuth, async (req, res) => {
         });
 
         const list = lists.get({ plain: true });
-        res.render('index', { list });
+      //  res.render('index', { list });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
