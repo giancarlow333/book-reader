@@ -46,6 +46,7 @@ The live version of the site is [here](https://ravishing-reads-a2209ea97ad8.hero
 ## Future Development
 
 * Connections between back end and front end.
+* Save the names of all authors to database, if more than one.
 * Allow users to add their own, custom lists.
 
 ## Sources
